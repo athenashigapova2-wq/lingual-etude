@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 43 22% 85%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 43 18% 90%;
+    --muted-foreground: 30 8% 42%;
+    --accent: 222 48% 21%;
+    --accent-foreground: 40 33% 97%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 33% 97%;
+    --border: 43 18% 84%;
+    --input: 43 18% 84%;
+    --ring: 222 48% 21%;
+    --radius: 0.25rem;
+    --font-heading: 'Playfair Display', ui-serif, Georgia, serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Playfair Display', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 36 33% 46%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 43 22% 85%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 43 18% 84%;
+    --sidebar-ring: 36 33% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+  ::selection {
+    background: hsl(222 48% 21% / 0.22);
+    color: hsl(0 0% 7%);
+  }
+  :focus-visible {
+    outline: 2px solid hsl(36 33% 46%);
+    outline-offset: 2px;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hairline {
+    height: 0.5px;
+    background: hsl(0 0% 7% / 0.18);
+  }
+  .pill-btn {
+    @apply inline-flex items-center justify-center rounded-full border border-foreground/30 px-5 py-2 text-sm tracking-wide transition-all duration-300 hover:bg-foreground hover:text-background;
+    min-height: 44px;
+  }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-display { font-family: var(--font-display); }
+  .text-balance { text-wrap: balance; }
+  .text-ink { color: hsl(0 0% 7%); }
+  .bg-ink { background-color: hsl(0 0% 7%); }
+  .text-gold { color: hsl(222 48% 21%); }
+  .bg-gold { background-color: hsl(222 48% 21%); }
+  .border-gold { border-color: hsl(222 48% 21%); }
+  .bg-linen { background-color: hsl(43 22% 85%); }
+  .bg-alabaster { background-color: hsl(40 33% 97%); }
+}
+
+@media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

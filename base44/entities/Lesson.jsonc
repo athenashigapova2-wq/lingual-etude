@@ -1,0 +1,31 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "module": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "poster_url": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "student_email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "student_email"
+  ]
+}

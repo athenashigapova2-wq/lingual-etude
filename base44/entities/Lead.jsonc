@@ -1,0 +1,20 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "default": "free_materials"
+    }
+  },
+  "required": [
+    "name",
+    "contact"
+  ]
+}
