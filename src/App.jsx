@@ -11,6 +11,7 @@ import { Navigate } from 'react-router-dom';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Landing from './pages/Landing';
 import ThankYou from './pages/ThankYou';
+import EmailVerified from './pages/EmailVerified';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
@@ -50,6 +51,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/thank-you" element={<ThankYou />} />
+      <Route path="/email-verified" element={<EmailVerified />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

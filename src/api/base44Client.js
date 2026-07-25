@@ -77,7 +77,11 @@ const auth = {
   },
 
   async register({ email, password }) {
-    const { error } = await supabase.auth.signUp({ email, password });
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { emailRedirectTo: `${window.location.origin}/email-verified` },
+    });
     if (error) throw error;
   },
 
