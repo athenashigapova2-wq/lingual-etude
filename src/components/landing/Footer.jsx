@@ -9,6 +9,9 @@ const T = {
     formats: 'Форматы',
     about: 'О преподавателе',
     book: 'Записаться',
+    partners: 'Технологии',
+    privacy: 'Политика конфиденциальности',
+    cookies: 'Использование cookie',
   },
   en: {
     quote: 'To speak is to be heard.',
@@ -18,6 +21,9 @@ const T = {
     formats: 'Formats',
     about: 'About',
     book: 'Book',
+    partners: 'Technology',
+    privacy: 'Privacy Policy',
+    cookies: 'Cookie Policy',
   },
 };
 
@@ -59,7 +65,20 @@ export default function Footer() {
       </div>
 
       <div className="mt-20 hairline w-full bg-background/20" />
-      <p className="mt-8 text-sm text-background/40">© 2026 ami</p>
+
+      <p className="mt-8 text-xs uppercase tracking-[0.3em] text-background/40">{t.partners}</p>
+      <p className="mt-3 text-sm text-background/60">
+        Supabase · Resend · GitHub · TurboFlare · РуЦентр · Google Cloud Console
+      </p>
+
+      <div className="mt-10 hairline w-full bg-background/20" />
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+        <p className="text-sm text-background/40">© 2026 ami</p>
+        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/50">
+          <a href="/privacy-policy" className="hover:text-background">{t.privacy}</a>
+          <a href="/cookie-policy" className="hover:text-background">{t.cookies}</a>
+        </div>
+      </div>
     </footer>
   );
 }
