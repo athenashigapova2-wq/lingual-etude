@@ -46,9 +46,14 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-feature-settings: "ss01", "cv01";
+    font-weight: 500;
   }
   ::selection {
     background: hsl(222 48% 21% / 0.22);
+    color: hsl(0 0% 7%);
+  }
+  .select-invert ::selection {
+    background: hsl(40 33% 97%);
     color: hsl(0 0% 7%);
   }
   :focus-visible {

@@ -9,7 +9,7 @@ const T = {
     formats: 'Форматы',
     about: 'О преподавателе',
     book: 'Записаться',
-    partners: 'Технологии',
+    partners: 'При поддержке',
     privacy: 'Политика конфиденциальности',
     cookies: 'Использование cookie',
   },
@@ -21,7 +21,7 @@ const T = {
     formats: 'Formats',
     about: 'About',
     book: 'Book',
-    partners: 'Technology',
+    partners: 'Powered by',
     privacy: 'Privacy Policy',
     cookies: 'Cookie Policy',
   },
@@ -67,8 +67,20 @@ export default function Footer() {
       <div className="mt-20 hairline w-full bg-background/20" />
 
       <p className="mt-8 text-xs uppercase tracking-[0.3em] text-background/40">{t.partners}</p>
-      <p className="mt-3 text-sm text-background/60">
-        Supabase · Resend · GitHub · TurboFlare · РуЦентр · Google Cloud Console
+      <p className="select-invert mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-background/60">
+        <a href="https://supabase.com/" target="_blank" rel="noreferrer" className="hover:text-background">Supabase</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://resend.com/emails" target="_blank" rel="noreferrer" className="hover:text-background">Resend</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://github.com/athenashigapova2-wq/lingual-etude" target="_blank" rel="noreferrer" className="hover:text-background">GitHub</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://turboflare.ru/" target="_blank" rel="noreferrer" className="hover:text-background">TurboFlare</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://www.nic.ru/" target="_blank" rel="noreferrer" className="hover:text-background">РуЦентр</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://console.cloud.google.com/welcome" target="_blank" rel="noreferrer" className="hover:text-background">Google Cloud Console</a>
+        <span className="text-background/30">✦</span>
+        <a href="https://termly.io/" target="_blank" rel="noreferrer" className="hover:text-background">Termly</a>
       </p>
 
       <div className="mt-10 hairline w-full bg-background/20" />

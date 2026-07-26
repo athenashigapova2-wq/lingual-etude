@@ -4,122 +4,98 @@ import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { UserPlus, Mail, Lock, Loader2 } from "lucide-react";
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { UserPlus, Mail, Lock, Loader2, MailCheck } from "lucide-react";
 import AuthLayout from "@/components/AuthLayout";
 import GoogleIcon from "@/components/GoogleIcon";
-import { toast } from "@/components/ui/use-toast";
+import { useLang } from "@/lib/LanguageContext";
+
+const T = {
+  ru: {
+    title: "Создать аккаунт",
+    subtitle: "Зарегистрируйтесь, чтобы начать",
+    google: "Продолжить с Google",
+    or: "или",
+    email: "Email",
+    password: "Пароль",
+    confirm: "Повторите пароль",
+    submit: "Создать аккаунт",
+    submitting: "Создаём аккаунт...",
+    haveAccount: "Уже есть аккаунт?",
+    login: "Войти",
+    mismatch: "Пароли не совпадают",
+    failed: "Не удалось зарегистрироваться",
+    sentTitle: "Проверьте почту",
+    sentSubtitle: `Мы отправили письмо на ${""}`,
+    sentBody: "Перейдите по ссылке в письме, чтобы подтвердить почту и войти в личный кабинет.",
+    backToLogin: "Назад ко входу",
+  },
+  en: {
+    title: "Create your account",
+    subtitle: "Sign up to get started",
+    google: "Continue with Google",
+    or: "or",
+    email: "Email",
+    password: "Password",
+    confirm: "Confirm Password",
+    submit: "Create account",
+    submitting: "Creating account...",
+    haveAccount: "Already have an account?",
+    login: "Log in",
+    mismatch: "Passwords do not match",
+    failed: "Registration failed",
+    sentTitle: "Check your email",
+    sentSubtitle: `We sent a link to ${""}`,
+    sentBody: "Follow the link in the email to confirm your address and sign in to your dashboard.",
+    backToLogin: "Back to log in",
+  },
+};
 
 export default function Register() {
+  const { lang } = useLang();
+  const t = T[lang];
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [showOtp, setShowOtp] = useState(false);
-  const [otpCode, setOtpCode] = useState("");
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError(t.mismatch);
       return;
     }
     setLoading(true);
     try {
       await base44.auth.register({ email, password });
-      setShowOtp(true);
+      setSent(true);
     } catch (err) {
-      setError(err.message || "Registration failed");
+      setError(err.message || t.failed);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleVerify = async () => {
-    setError("");
-    setLoading(true);
-    try {
-      const result = await base44.auth.verifyOtp({ email, otpCode });
-      if (result?.access_token) {
-        base44.auth.setToken(result.access_token);
-      }
-      window.location.href = "/";
-    } catch (err) {
-      setError(err.message || "Invalid verification code");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleResend = async () => {
-    setError("");
-    try {
-      await base44.auth.resendOtp(email);
-      toast({
-        title: "Code sent",
-        description: "Check your email for the new code.",
-      });
-    } catch (err) {
-      setError(err.message || "Failed to resend code");
     }
   };
 
   const handleGoogle = () => {
-    base44.auth.loginWithProvider("google", "/");
+    base44.auth.loginWithProvider("google", "/dashboard");
   };
 
-  if (showOtp) {
+  if (sent) {
     return (
       <AuthLayout
-        icon={Mail}
-        title="Verify your email"
-        subtitle={`We sent a code to ${email}`}
+        icon={MailCheck}
+        title={t.sentTitle}
+        subtitle={lang === "ru" ? `Мы отправили письмо на ${email}` : `We sent a link to ${email}`}
+        footer={
+          <Link to="/login" className="text-primary font-medium hover:underline">
+            {t.backToLogin}
+          </Link>
+        }
       >
-        {error && (
-          <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
-            {error}
-          </div>
-        )}
-        <div className="flex justify-center mb-6">
-          <InputOTP
-            maxLength={6}
-            value={otpCode}
-            onChange={setOtpCode}
-            autoFocus
-            autoComplete="one-time-code"
-          >
-            <InputOTPGroup>
-              <InputOTPSlot index={0} />
-              <InputOTPSlot index={1} />
-              <InputOTPSlot index={2} />
-              <InputOTPSlot index={3} />
-              <InputOTPSlot index={4} />
-              <InputOTPSlot index={5} />
-            </InputOTPGroup>
-          </InputOTP>
-        </div>
-        <Button
-          className="w-full h-12 font-medium"
-          onClick={handleVerify}
-          disabled={loading || otpCode.length < 6}
-        >
-          {loading ? (
-            <>
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Verifying...
-            </>
-          ) : (
-            "Verify"
-          )}
-        </Button>
-        <p className="text-center text-sm text-muted-foreground mt-4">
-          Didn't receive the code?{" "}
-          <button onClick={handleResend} className="text-primary font-medium hover:underline">
-            Resend
-          </button>
-        </p>
+        <p className="text-sm text-foreground text-center">{t.sentBody}</p>
       </AuthLayout>
     );
   }
@@ -127,13 +103,13 @@ export default function Register() {
   return (
     <AuthLayout
       icon={UserPlus}
-      title="Create your account"
-      subtitle="Sign up to get started"
+      title={t.title}
+      subtitle={t.subtitle}
       footer={
         <>
-          Already have an account?{" "}
+          {t.haveAccount}{" "}
           <Link to="/login" className="text-primary font-medium hover:underline">
-            Log in
+            {t.login}
           </Link>
         </>
       }
@@ -144,7 +120,7 @@ export default function Register() {
         onClick={handleGoogle}
       >
         <GoogleIcon className="w-5 h-5 mr-2" />
-        Continue with Google
+        {t.google}
       </Button>
 
       <div className="relative mb-6">
@@ -152,7 +128,7 @@ export default function Register() {
           <div className="w-full border-t border-border" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-card px-3 text-muted-foreground">or</span>
+          <span className="bg-card px-3 text-muted-foreground">{t.or}</span>
         </div>
       </div>
 
@@ -164,7 +140,7 @@ export default function Register() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t.email}</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
             <Input
@@ -181,7 +157,7 @@ export default function Register() {
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t.password}</Label>
           <div className="relative">
             <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
             <Input
@@ -197,7 +173,7 @@ export default function Register() {
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="confirm">Confirm Password</Label>
+          <Label htmlFor="confirm">{t.confirm}</Label>
           <div className="relative">
             <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
             <Input
@@ -216,10 +192,10 @@ export default function Register() {
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Creating account...
+              {t.submitting}
             </>
           ) : (
-            "Create account"
+            t.submit
           )}
         </Button>
       </form>

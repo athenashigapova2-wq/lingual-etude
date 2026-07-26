@@ -136,7 +136,7 @@ export default function Overview() {
         >
           <NotebookPen className="h-5 w-5 text-gold" />
           <h3 className="mt-6 font-heading text-2xl text-ink">Домашние задания</h3>
-          <p className="mt-2 text-foreground/60">Ваша практика и то, что вы уже раскрыли.</p>
+          <p className="mt-2 text-foreground/60">Ваша практика и то, что Вы уже раскрыли.</p>
         </Link>
         <Link
           to="/dashboard/schedule"

@@ -43,7 +43,7 @@ const DEFAULT_TASKS = [
   {
     title: 'Business English: negotiation email + role-play script',
     description:
-      `Кейс: вы ведёте переговоры о цене SaaS-подписки (входящие $18/мес, ваша цель $12). 
+      `Кейс: Вы ведёте переговоры о цене SaaS-подписки (входящие $18/мес, Ваша цель $12). 
       (1) Follow-up email после первого звонка: подтвердите договорённости, обозначьте условия, предложите trade-off (volume discount / annual billing). Формальный регистр, 150–180 слов. 
       (2) Скрипт для follow-up звонка: 3 ключевых аргумента + 2 возражения и ваши ответы, в рамке BATNAединым документом.`,
     lesson_title: 'Professional Communication — Module 2',
@@ -55,7 +55,7 @@ const DEFAULT_TASKS = [
     description:
       `В тексте grammar_audit.pdf (~900 слов) найдите и исправьте все ошибки в условных наклонениях и согласовании времён (всего 12). 
       Для каждой правки: исходная форма → исправленная форма → правило (например, «Type 3: past unreal, past perfect + would have V3»). 
-      Дополнительно составьте 5 своих предложений: Zero, First, Second, Third и mixed conditional — на тему вашей специальности. 
+      Дополнительно составьте 5 своих предложений: Zero, First, Second, Third и mixed conditional — на тему Вашей специальности. 
       Цель — осознанное владение, а не механика.`,
     lesson_title: 'Grammar Lab — Hypotheticals & Time',
     status: 'not_started',
@@ -67,7 +67,7 @@ const DEFAULT_TASKS = [
       `Запишите себя, читающего 20 пар минимальных контрастов (ship/sheep, full/fool, cot/caught, bad/bed… — список в pairs_04.pdf). 
       (1) Аудио-файл. 
       (2) Транскрипция всех 40 слов в IPA. 
-      (3) Самоанализ: отметьте пары, где вы не различаете гласные, и опишите артикуляцию (язык, губы, челюсть) для каждого проблемного звука. 
+      (3) Самоанализ: отметьте пары, где Вы не различаете гласные, и опишите артикуляцию (язык, губы, челюсть) для каждого проблемного звука. 
       Цель — услышать себя со стороны.`,
     lesson_title: 'Phonetics Lab — Vowel Inventory',
     status: 'reviewed',

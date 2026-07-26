@@ -6,33 +6,69 @@ export default function CookiePolicy() {
 
   if (lang === 'en') {
     return (
-      <LegalLayout title="Cookie Policy" updated="Last updated: July 2026">
+      <LegalLayout title="Cookie Policy" updated="Last updated: July 26, 2026">
         <p>
-          This site uses a minimal set of cookies and similar technologies needed
-          to keep you signed in and remember your language preference.
+          This Cookie Policy explains how Ami Studios ("we", "us", "our") uses
+          cookies and similar technologies when you visit amistudios.ru.
         </p>
 
         <section>
-          <h2 className="font-heading text-xl text-ink">What we use cookies for</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5">
-            <li>Keeping you signed in to your account between visits (authentication session).</li>
-            <li>Remembering your selected interface language (Russian/English).</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-heading text-xl text-ink">What we don't use</h2>
+          <h2 className="font-heading text-xl text-ink">What are cookies</h2>
           <p className="mt-3">
-            We do not use advertising or cross-site tracking cookies, and we do
-            not sell any data to third parties.
+            Cookies are small data files placed on your device when you visit a
+            website, used to make the site work and to remember your preferences.
           </p>
         </section>
 
         <section>
-          <h2 className="font-heading text-xl text-ink">Managing cookies</h2>
+          <h2 className="font-heading text-xl text-ink">Why we use cookies</h2>
           <p className="mt-3">
-            You can clear or block cookies at any time through your browser
-            settings. Doing so may sign you out of your account.
+            We use only strictly necessary, first-party cookies:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>an authentication cookie that keeps you signed in to your account;</li>
+            <li>a preference cookie that remembers your selected interface language (Russian/English).</li>
+          </ul>
+          <p className="mt-3">
+            We do not use advertising cookies, cross-site tracking, analytics
+            trackers, or third-party marketing pixels. We do not serve targeted
+            advertising and we do not use Flash cookies (Local Shared Objects).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-xl text-ink">How you can control cookies</h2>
+          <p className="mt-3">
+            Since the cookies we use are strictly necessary, there is no cookie
+            preference banner on the site. You can still block or delete cookies
+            at any time through your browser settings, though this will sign you
+            out of your account and reset your language preference.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-xl text-ink">Other tracking technologies</h2>
+          <p className="mt-3">
+            We do not use web beacons, tracking pixels, or similar technologies on
+            the site.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-xl text-ink">Updates to this policy</h2>
+          <p className="mt-3">
+            We may update this Cookie Policy from time to time. The "Last
+            updated" date above reflects the latest revision.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-xl text-ink">Contact</h2>
+          <p className="mt-3">
+            Questions about this policy can be sent to{' '}
+            <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+            or via Telegram{' '}
+            <a href="https://t.me/ami_shig" className="underline">@ami_shig</a>.
           </p>
         </section>
       </LegalLayout>
@@ -40,34 +76,73 @@ export default function CookiePolicy() {
   }
 
   return (
-    <LegalLayout title="Использование cookie" updated="Обновлено: июль 2026">
+    <LegalLayout title="Использование cookie" updated="Обновлено: 26 июля 2026 г.">
       <p>
-        Сайт использует минимальный набор cookie-файлов и похожих технологий,
-        необходимых для того, чтобы сохранять вашу авторизацию и выбранный язык
-        интерфейса.
+        Настоящая политика описывает, как «Ami Studios» (далее — «мы»)
+        использует cookie-файлы и похожие технологии на сайте amistudios.ru.
       </p>
 
       <section>
-        <h2 className="font-heading text-xl text-ink">Для чего мы используем cookie</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>Чтобы сохранять вашу авторизацию между визитами на сайт (сессия входа в аккаунт).</li>
-          <li>Чтобы запоминать выбранный язык интерфейса (русский/английский).</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="font-heading text-xl text-ink">Что мы не используем</h2>
+        <h2 className="font-heading text-xl text-ink">Что такое cookie</h2>
         <p className="mt-3">
-          Мы не используем рекламные cookie и технологии межсайтового
-          отслеживания, а также не передаём и не продаём данные третьим лицам.
+          Cookie — небольшие файлы, которые сохраняются на Вашем устройстве при
+          посещении сайта, чтобы сайт работал корректно и запоминал Ваши
+          настройки.
         </p>
       </section>
 
       <section>
-        <h2 className="font-heading text-xl text-ink">Управление cookie</h2>
+        <h2 className="font-heading text-xl text-ink">Зачем мы используем cookie</h2>
         <p className="mt-3">
-          Вы можете в любой момент очистить или заблокировать cookie через
-          настройки браузера. Это может привести к выходу из аккаунта на сайте.
+          Мы используем только строго необходимые cookie собственного сайта
+          (first-party):
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>cookie авторизации — сохраняет Вашу сессию входа в аккаунт;</li>
+          <li>cookie предпочтений — запоминает выбранный язык интерфейса (русский/английский).</li>
+        </ul>
+        <p className="mt-3">
+          Мы не используем рекламные cookie, межсайтовое отслеживание,
+          аналитические трекеры или сторонние маркетинговые пиксели. Мы не
+          показываем таргетированную рекламу и не используем Flash-cookie
+          (Local Shared Objects).
+        </p>
+      </section>
+
+      <section>
+        <h2 className="font-heading text-xl text-ink">Как управлять cookie</h2>
+        <p className="mt-3">
+          Поскольку используемые нами cookie строго необходимы для работы
+          сайта, отдельного баннера с настройками cookie на сайте нет. Вы
+          всегда можете заблокировать или удалить cookie через настройки
+          браузера — это приведёт к выходу из аккаунта и сбросу выбранного
+          языка.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="font-heading text-xl text-ink">Другие технологии отслеживания</h2>
+        <p className="mt-3">
+          Мы не используем веб-маяки, трекинг-пиксели и похожие технологии на
+          сайте.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="font-heading text-xl text-ink">Изменения политики</h2>
+        <p className="mt-3">
+          Мы можем время от времени обновлять эту политику. Дата «Обновлено» в
+          начале страницы отражает актуальную версию.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="font-heading text-xl text-ink">Контакты</h2>
+        <p className="mt-3">
+          По вопросам, связанным с этой политикой, пишите на{' '}
+          <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+          или в Telegram{' '}
+          <a href="https://t.me/ami_shig" className="underline">@ami_shig</a>.
         </p>
       </section>
     </LegalLayout>

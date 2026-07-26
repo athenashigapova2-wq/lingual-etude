@@ -9,13 +9,13 @@ const T = {
     label: 'О преподавателе',
     h2: 'Язык как способ стать собой.',
     p1:
-      'Английский — это не только язык, на котором я думаю почти так же свободно, как на русском. Это то, с чем я прожила больше десяти лет: 100 баллов на ЕГЭ, победы и призовые места на олимпиадах «Ломоносов», «Высшая проба», ВсОШ и международном конкурсе Dominanta Education, стажировка в Ирландии.',
+      <>Английский — это не только язык, на котором я думаю почти так же свободно, как на русском. Это то, с чем я прожила <strong className="font-semibold text-ink">больше десяти лет</strong>: 100 баллов на ЕГЭ, победы и призовые места на олимпиадах «Ломоносов», «Высшая проба», ВсОШ и международном конкурсе Dominanta Education, стажировка в Ирландии.</>,
     p2:
-      'Но за цифрами и медалями для меня всегда стояло другое — язык как способ стать собой. Не заучить правила, а найти в другом языке ещё один способ говорить о себе честно.',
+      <>Но за цифрами и медалями для меня всегда стояло другое — <strong className="font-semibold text-ink">язык как способ стать собой</strong>. Не заучить правила, а найти в другом языке ещё один способ говорить о себе честно.</>,
     p3:
       'Я учу и тех, кому язык нужен для жизни — свободно говорить, думать, чувствовать себя собой на английском, — и тех, кому предстоит экзамен и нужен результат. Подход один: без зубрёжки, через понимание и личный интерес.',
     p4:
-      'Именно поэтому я преподаю не «по учебнику», а через личный подход — будь то индивидуальные занятия или Ami Studio, где мы растим язык медленно, бережно и по-настоящему.',
+      <>Именно поэтому я преподаю не «по учебнику», а через <strong className="font-semibold text-ink">личный подход — будь то индивидуальные занятия или Ami Studio</strong>, где мы растим язык медленно, бережно и по-настоящему.</>,
     achievements: [
       { label: '100 баллов ЕГЭ', href: 'https://drive.google.com/file/d/1ErNCXCKhDO5iDR_k_MFQmS6xpLvut0Gb/view?usp=sharing' },
       { label: 'Dominanta Education', href: 'https://drive.google.com/file/d/1siQM4iv87xWLjoaaG1-dL2nCVBJquADA/view?usp=sharing' },
@@ -29,13 +29,13 @@ const T = {
     label: 'About the teacher',
     h2: 'Language as a way to become yourself.',
     p1:
-      'English isn’t only the language I think in almost as freely as in Russian. It’s something I’ve lived with for over ten years: a perfect 100 on the EGE, wins and prizes at the Lomonosov, Higher Probe and VSOSh olympiads and the international Dominanta Education contest, an internship in Ireland.',
+      <>English isn’t only the language I think in almost as freely as in Russian. It’s something I’ve lived with <strong className="font-semibold text-ink">for over ten years</strong>: a perfect 100 on the EGE, wins and prizes at the Lomonosov, Higher Probe and VSOSh olympiads and the international Dominanta Education contest, an internship in Ireland.</>,
     p2:
-      'But behind the numbers and medals there was always something else for me — language as a way to become yourself. Not memorising rules, but finding in another language one more way to speak about yourself honestly.',
+      <>But behind the numbers and medals there was always something else for me — <strong className="font-semibold text-ink">language as a way to become yourself</strong>. Not memorising rules, but finding in another language one more way to speak about yourself honestly.</>,
     p3:
       'I teach both those who need the language for life — to speak freely, think, feel themselves in English — and those facing an exam and needing a result. The approach is the same: no rote learning, through understanding and personal interest.',
     p4:
-      'That’s why I don’t teach “by the textbook” but through a personal approach — whether individual lessons or Ami Studio, where we grow the language slowly, gently and truly.',
+      <>That’s why I don’t teach “by the textbook” but through a <strong className="font-semibold text-ink">personal approach — whether individual lessons or Ami Studio</strong>, where we grow the language slowly, gently and truly.</>,
     achievements: [
       { label: '100 pts EGE', href: 'https://drive.google.com/file/d/1ErNCXCKhDO5iDR_k_MFQmS6xpLvut0Gb/view?usp=sharing' },
       { label: 'Dominanta Education', href: 'https://drive.google.com/file/d/1siQM4iv87xWLjoaaG1-dL2nCVBJquADA/view?usp=sharing' },
