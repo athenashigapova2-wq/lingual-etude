@@ -58,17 +58,16 @@ const auth = {
   async me() {
     const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) throw new Error('Not authenticated');
-    const { data: profile, error: profileError } = await supabase
+    const { data: profile } = await supabase
       .from('profiles')
-      .select('role')
+      .select('role, full_name')
       .eq('id', user.id)
       .single();
-    if (profileError) throw profileError;
     return {
       id: user.id,
       email: user.email,
       role: profile?.role || 'user',
-      full_name: user.user_metadata?.full_name || null,
+      full_name: profile?.full_name || user.user_metadata?.full_name || null,
     };
   },
 
