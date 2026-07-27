@@ -32,7 +32,6 @@ export default function Admin() {
   const [students, setStudents] = useState([]);
   const [homework, setHomework] = useState([]);
   const [lessons, setLessons] = useState([]);
-  const [bookings, setBookings] = useState([]);
   const [hw, setHw] = useState({ title: '', lesson_title: '', description: '', due_date: '', student_email: '' });
   const [ls, setLs] = useState({ title: '', module: '', duration: '', description: '', poster_url: '', video_url: '', student_email: '' });
   const [busy, setBusy] = useState(false);
@@ -50,16 +49,14 @@ export default function Admin() {
   };
 
   const refresh = async () => {
-    const [u, h, l, b] = await Promise.all([
+    const [u, h, l] = await Promise.all([
       base44.entities.User.list().catch(() => []),
       base44.entities.Homework.list().catch(() => []),
       base44.entities.Lesson.list().catch(() => []),
-      base44.entities.Booking.list().catch(() => []),
     ]);
     setStudents(u);
     setHomework(h);
     setLessons(l);
-    setBookings(b);
   };
 
   useEffect(() => {
@@ -115,26 +112,6 @@ export default function Admin() {
         <p className="text-xs uppercase tracking-[0.4em] text-foreground/40">Администрирование</p>
         <h1 className="mt-3 font-heading text-4xl font-light text-ink md:text-5xl">Управление контентом</h1>
       </header>
-
-      {/* Bookings */}
-      <section className="rounded-2xl border border-foreground/10 bg-white p-8">
-        <h2 className="font-heading text-2xl text-ink">Бронирования</h2>
-        <div className="mt-5 divide-y divide-foreground/10">
-          {bookings.map((b) => (
-            <div key={b.id} className="flex flex-col gap-1 py-4 md:flex-row md:items-center md:justify-between">
-              <div>
-                <div className="font-heading text-lg text-ink">{b.name}</div>
-                <div className="text-sm text-foreground/60">{b.contact}</div>
-                {b.comment && <div className="mt-1 text-sm text-foreground/50">{b.comment}</div>}
-              </div>
-              <span className="shrink-0 rounded-full bg-linen px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-foreground/60">
-                {b.format === 'personal' ? 'Персональные' : 'Ami Studio'}
-              </span>
-            </div>
-          ))}
-          {bookings.length === 0 && <p className="py-6 text-foreground/50">Заявок пока нет.</p>}
-        </div>
-      </section>
 
       {/* Students */}
       <section className="rounded-2xl border border-foreground/10 bg-white p-8">

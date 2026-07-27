@@ -11,7 +11,9 @@ export default function PrivacyPolicy() {
           This Privacy Notice for Ami Studios ("we", "us", "our") describes how and
           why we process your personal information when you use our services
           ("Services"), including when you visit amistudios.ru, register an
-          account, book a lesson, or otherwise contact us.
+          account, or otherwise contact us. Booking a lesson happens outside
+          the website, via Telegram, and does not involve any data processing
+          on amistudios.ru.
         </p>
         <p>
           If you do not agree with this notice, please do not use our Services.
@@ -21,9 +23,8 @@ export default function PrivacyPolicy() {
 
         <section>
           <h2 className="font-heading text-xl text-ink">1. What information do we collect</h2>
-          <p className="mt-3">We collect personal information you voluntarily provide to us, which may include:</p>
+          <p className="mt-3">We collect personal information you voluntarily provide to us when you register and use your dashboard:</p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
-            <li>name and contact details (email, messenger handle);</li>
             <li>account credentials (email and a securely hashed password);</li>
             <li>homework submissions, uploaded files, and lesson progress;</li>
             <li>if you sign in with Google, basic profile information (name, email, profile picture) shared with us by Google.</li>
@@ -157,7 +158,9 @@ export default function PrivacyPolicy() {
         Настоящая политика описывает, как и почему онлайн-школа английского
         языка «Ami Studios» (далее — «мы») обрабатывает Ваши персональные
         данные при использовании сайта amistudios.ru — включая регистрацию
-        аккаунта, запись на занятие или обращение к нам любым другим способом.
+        аккаунта или обращение к нам любым другим способом. Запись на занятие
+        происходит вне сайта, через Telegram, и не связана с обработкой данных
+        на amistudios.ru.
       </p>
       <p>
         Если Вы не согласны с этой политикой, пожалуйста, не используйте
@@ -167,9 +170,8 @@ export default function PrivacyPolicy() {
 
       <section>
         <h2 className="font-heading text-xl text-ink">1. Какие данные мы собираем</h2>
-        <p className="mt-3">Мы собираем персональные данные, которые Вы добровольно предоставляете нам:</p>
+        <p className="mt-3">Мы собираем персональные данные, которые Вы добровольно предоставляете нам при регистрации и использовании личного кабинета:</p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>имя и контактные данные (email, мессенджер);</li>
           <li>данные учётной записи — email и надёжно захешированный пароль;</li>
           <li>домашние задания, загружаемые файлы и данные о прогрессе занятий;</li>
           <li>при входе через Google — базовые данные профиля (имя, email, фото), которые передаёт нам Google.</li>

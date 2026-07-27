@@ -39,7 +39,6 @@ const makeEntity = (table) => ({
 });
 
 const entities = {
-  Booking: makeEntity('bookings'),
   Lesson: makeEntity('lessons'),
   Homework: makeEntity('homeworks'),
   // User — особый случай: читаем profiles (доступно только админу по RLS)
