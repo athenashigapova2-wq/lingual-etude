@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
-import ReachingHand from '@/components/landing/ReachingHand';
 
 const TELEGRAM_URL = 'https://t.me/amistudios';
 
@@ -33,31 +32,33 @@ export default function BookingSection() {
 
   // Руки начинают за пределами блока (в боковых полях) и сходятся к центру
   // по мере прокрутки к секции — почти касаясь друг друга, но не смыкаясь.
-  const leftX = useTransform(scrollYProgress, [0, 1], ['-6vw', '9vw']);
-  const rightX = useTransform(scrollYProgress, [0, 1], ['6vw', '-9vw']);
+  const leftX = useTransform(scrollYProgress, [0, 1], ['-8vw', '7vw']);
+  const rightX = useTransform(scrollYProgress, [0, 1], ['8vw', '-7vw']);
   const handOpacity = useTransform(scrollYProgress, [0, 0.35], [0, 1]);
-  const handScale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
+  const handScale = useTransform(scrollYProgress, [0, 1], [0.88, 1]);
 
   return (
     <section
       id="booking"
       ref={sectionRef}
-      className="relative overflow-hidden bg-alabaster px-[8vw] py-[14vh]"
+      className="relative overflow-hidden bg-alabaster px-[8vw] py-[16vh]"
     >
-      <motion.div
+      {/* Адам — левая рука, тянется снизу-слева вверх-вправо */}
+      <motion.img
+        src="/hands/hand-left.png"
+        alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-[38%] w-[26vw] max-w-[280px]"
+        className="pointer-events-none absolute left-0 top-[8%] w-[24vw] max-w-[260px] select-none"
         style={{ x: leftX, opacity: handOpacity, scale: handScale }}
-      >
-        <ReachingHand className="w-full" />
-      </motion.div>
-      <motion.div
+      />
+      {/* Бог — правая рука, тянется сверху-справа вниз-влево */}
+      <motion.img
+        src="/hands/hand-right.png"
+        alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-[30%] w-[26vw] max-w-[280px]"
+        className="pointer-events-none absolute right-0 top-[6%] w-[24vw] max-w-[260px] select-none"
         style={{ x: rightX, opacity: handOpacity, scale: handScale }}
-      >
-        <ReachingHand flip className="w-full" />
-      </motion.div>
+      />
 
       <motion.div
         initial={{ opacity: 0, filter: 'blur(12px)' }}
