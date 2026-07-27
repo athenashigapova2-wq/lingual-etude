@@ -32,8 +32,8 @@ export default function BookingSection() {
 
   // Руки начинают за пределами блока (в боковых полях) и сходятся к центру
   // по мере прокрутки к секции — почти касаясь друг друга, но не смыкаясь.
-  const leftX = useTransform(scrollYProgress, [0, 1], ['-8vw', '7vw']);
-  const rightX = useTransform(scrollYProgress, [0, 1], ['8vw', '-7vw']);
+  const leftX = useTransform(scrollYProgress, [0, 1], ['-4vw', '9vw']);
+  const rightX = useTransform(scrollYProgress, [0, 1], ['4vw', '-9vw']);
   const handOpacity = useTransform(scrollYProgress, [0, 0.35], [0, 1]);
   const handScale = useTransform(scrollYProgress, [0, 1], [0.88, 1]);
 
