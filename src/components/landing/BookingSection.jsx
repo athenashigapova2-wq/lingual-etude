@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
 
-const TELEGRAM_URL = 'https://t.me/amistudios';
+const TELEGRAM_URL = 'https://t.me/ami_shig';
 
 const T = {
   ru: {
