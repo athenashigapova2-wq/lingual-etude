@@ -48,16 +48,28 @@ export default function BookingSection() {
         src="/hands/hand-left.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-[8%] w-[24vw] max-w-[260px] select-none"
-        style={{ x: leftX, opacity: handOpacity, scale: handScale }}
+        className="pointer-events-none absolute left-0 top-[2%] w-[34vw] max-w-[400px] select-none"
+        style={{
+          x: leftX,
+          opacity: handOpacity,
+          scale: handScale,
+          maskImage: 'linear-gradient(to right, transparent 0%, black 20%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%)',
+        }}
       />
       {/* Бог — правая рука, тянется сверху-справа вниз-влево */}
       <motion.img
         src="/hands/hand-right.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-[6%] w-[24vw] max-w-[260px] select-none"
-        style={{ x: rightX, opacity: handOpacity, scale: handScale }}
+        className="pointer-events-none absolute right-0 top-[0%] w-[34vw] max-w-[400px] select-none"
+        style={{
+          x: rightX,
+          opacity: handOpacity,
+          scale: handScale,
+          maskImage: 'linear-gradient(to left, transparent 0%, black 20%)',
+          WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 20%)',
+        }}
       />
 
       <motion.div
