@@ -40,7 +40,6 @@ const makeEntity = (table) => ({
 
 const entities = {
   Booking: makeEntity('bookings'),
-  Lead: makeEntity('leads'),
   Lesson: makeEntity('lessons'),
   Homework: makeEntity('homeworks'),
   // User — особый случай: читаем profiles (доступно только админу по RLS)

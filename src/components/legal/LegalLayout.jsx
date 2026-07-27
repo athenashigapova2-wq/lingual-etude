@@ -51,7 +51,7 @@ export default function LegalLayout({ title, updated, children }) {
           <a href="mailto:amina.shigapova.06@mail.ru" className="block hover:text-ink">
             amina.shigapova.06@mail.ru
           </a>
-          <a href="https://t.me/ami_shig" className="block hover:text-ink">@ami_shig</a>
+          <a href="https://t.me/amistudios" className="block hover:text-ink">@amistudios</a>
         </div>
       </main>
     </div>

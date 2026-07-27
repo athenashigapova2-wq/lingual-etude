@@ -144,7 +144,7 @@ export default function PrivacyPolicy() {
             Questions about this notice can be sent to{' '}
             <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
             or via Telegram{' '}
-            <a href="https://t.me/ami_shig" className="underline">@ami_shig</a>.
+            <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
           </p>
         </section>
       </LegalLayout>
@@ -292,7 +292,7 @@ export default function PrivacyPolicy() {
           По вопросам, связанным с этой политикой, пишите на{' '}
           <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
           или в Telegram{' '}
-          <a href="https://t.me/ami_shig" className="underline">@ami_shig</a>.
+          <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
         </p>
       </section>
     </LegalLayout>

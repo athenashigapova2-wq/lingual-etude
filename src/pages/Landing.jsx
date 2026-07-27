@@ -5,7 +5,7 @@ import LearningFormats from '@/components/landing/LearningFormats';
 import About from '@/components/landing/About';
 import MoreThanEnglish from '@/components/landing/MoreThanEnglish';
 import Reviews from '@/components/landing/Reviews';
-import FreeMaterials from '@/components/landing/FreeMaterials';
+import HowITeach from '@/components/landing/HowITeach';
 import FAQSection from '@/components/landing/FAQ';
 import BookingSection from '@/components/landing/BookingSection';
 import Footer from '@/components/landing/Footer';
@@ -23,7 +23,7 @@ export default function Landing() {
         <MoreThanEnglish />
         <LearningFormats />
         <Reviews />
-        <FreeMaterials />
+        <HowITeach />
         <FAQSection />
         <BookingSection />
       </main>

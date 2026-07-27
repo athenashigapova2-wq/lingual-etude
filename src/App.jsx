@@ -10,7 +10,6 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 import { Navigate } from 'react-router-dom';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Landing from './pages/Landing';
-import ThankYou from './pages/ThankYou';
 import EmailVerified from './pages/EmailVerified';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
@@ -52,7 +51,6 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/email-verified" element={<EmailVerified />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/cookie-policy" element={<CookiePolicy />} />
