@@ -70,17 +70,11 @@ export default function Footer() {
       <p className="select-invert mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-background/60">
         <a href="https://supabase.com/" target="_blank" rel="noreferrer" className="hover:text-background">Supabase</a>
         <span className="text-background/30">✦</span>
-        <a href="https://resend.com/emails" target="_blank" rel="noreferrer" className="hover:text-background">Resend</a>
-        <span className="text-background/30">✦</span>
-        <a href="https://github.com/athenashigapova2-wq/lingual-etude" target="_blank" rel="noreferrer" className="hover:text-background">GitHub</a>
-        <span className="text-background/30">✦</span>
         <a href="https://turboflare.ru/" target="_blank" rel="noreferrer" className="hover:text-background">TurboFlare</a>
         <span className="text-background/30">✦</span>
         <a href="https://www.nic.ru/" target="_blank" rel="noreferrer" className="hover:text-background">РуЦентр</a>
         <span className="text-background/30">✦</span>
         <a href="https://console.cloud.google.com/welcome" target="_blank" rel="noreferrer" className="hover:text-background">Google Cloud Console</a>
-        <span className="text-background/30">✦</span>
-        <a href="https://termly.io/" target="_blank" rel="noreferrer" className="hover:text-background">Termly</a>
       </p>
 
       <div className="mt-10 hairline w-full bg-background/20" />
