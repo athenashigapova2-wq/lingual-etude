@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>create and manage your account and authenticate you;</li>
             <li>deliver lessons, homework, and track your progress;</li>
-            <li>communicate with you about bookings, homework, and account matters;</li>
+            <li>communicate with you about homework and account matters;</li>
             <li>maintain the security and proper functioning of the Services;</li>
             <li>comply with legal obligations, where applicable.</li>
           </ul>
@@ -185,7 +185,7 @@ export default function PrivacyPolicy() {
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>создать и вести Вашу учётную запись, авторизовать Вас;</li>
           <li>проводить занятия, домашние задания и отслеживать прогресс;</li>
-          <li>связываться с Вами по вопросам записи, ДЗ и аккаунта;</li>
+          <li>связываться с Вами по вопросам ДЗ и аккаунта;</li>
           <li>обеспечивать безопасность и корректную работу сайта;</li>
           <li>соблюдать требования законодательства, если применимо.</li>
         </ul>
