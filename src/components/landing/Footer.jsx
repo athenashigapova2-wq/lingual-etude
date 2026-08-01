@@ -43,14 +43,14 @@ export default function Footer() {
           <a href="mailto:amina.shigapova.06@mail.ru" className="mt-4 block font-heading text-2xl italic">
             amina.shigapova.06@mail.ru
           </a>
-          <a href="https://t.me/amistudios" className="mt-2 block text-background/70 hover:text-background">
-            @amistudios
+          <a href="https://t.me/ami_shig" className="mt-2 block text-background/70 hover:text-background">
+            @ami_shig
           </a>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-background/40">{t.social}</p>
           <div className="mt-4 space-y-2">
-            <a href="https://t.me/amistudios" className="block text-background/70 hover:text-background">Telegram</a>
+            <a href="https://t.me/ami_shig" className="block text-background/70 hover:text-background">Telegram</a>
             <a href="https://www.youtube.com/@amina_sh" className="block text-background/70 hover:text-background">YouTube</a>
           </div>
         </div>
