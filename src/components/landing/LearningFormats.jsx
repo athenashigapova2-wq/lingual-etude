@@ -87,26 +87,28 @@ const FORMATS = [
 ];
 
 const KSO = {
-  label: { ru: 'Дополнительно', en: 'Additionally' },
-  title: { ru: 'Естественные науки · КСО', en: 'Natural Sciences · CSR' },
+  label: { ru: 'Отраслевая программа', en: 'Industry program' },
+  title: { ru: 'КСО и устойчивое развитие ЦОД', en: 'CSR & Sustainable Data Centres' },
   text: {
-    ru: 'Подготовка по КСО для корпораций: как применять новые стандарты ISO, выстраивать формы отчётности (ESG, GRI, SASB) и описывать химические и экологические последствия деятельности компании. Английский для работы с регуляторами, инвесторами и устойчивым развитием.',
-    en: 'CSR training for corporations: how to apply new ISO standards, build reporting frameworks (ESG, GRI, SASB) and describe the chemical and environmental consequences of a company’s operations. English for working with regulators, investors and sustainability.',
+    ru: 'Программа для специалистов и компаний, работающих с центрами обработки данных: международные показатели ресурсной эффективности, корпоративная политика устойчивого развития, оптимизация вычислительной инфраструктуры и современные технологии охлаждения. Отдельный фокус — профессиональная терминология и подготовка материалов на английском языке.',
+    en: 'A program for data-centre professionals and organizations covering international resource-efficiency metrics, corporate sustainability policy, computing-infrastructure optimization, and advanced cooling technologies. Special attention is given to professional terminology and preparing materials in English.',
   },
   price: '5 400 ₽',
   unit: { ru: 'за курс', en: 'per course' },
   points: {
     ru: [
-      'Новые стандарты ISO и их применение',
-      'Формы отчётности: ESG, GRI, SASB',
-      'Химические и экологические последствия',
-      'Язык для регуляторов и инвесторов',
+      'ISO/IEC 30134: показатели PUE, WUE, REF, ERF и CER',
+      'Политика КСО и устойчивого развития для операторов ЦОД',
+      'Программные модели для максимизации полезной вычислительной отдачи на единицу энергии',
+      'Жидкостное, иммерсионное и подводное охлаждение: актуальные отраслевые практики',
+      'Минимизация энергопотребления, водопотребления и углеродной интенсивности в целевой функции',
     ],
     en: [
-      'New ISO standards and their application',
-      'Reporting frameworks: ESG, GRI, SASB',
-      'Chemical and environmental consequences',
-      'Language for regulators and investors',
+      'ISO/IEC 30134 metrics: PUE, WUE, REF, ERF, and CER',
+      'CSR and sustainability policy for data-centre operators',
+      'Software models that maximize useful computing output per unit of energy',
+      'Current liquid, immersion, and underwater cooling practices',
+      'Energy use, water use, and carbon intensity as objective-function minimization criteria',
     ],
   },
   cta: { ru: 'Уточнить программу →', en: 'Clarify the program →' },
@@ -175,7 +177,7 @@ export default function LearningFormats() {
         ))}
       </div>
 
-      {/* Дополнительно: Естественные науки / КСО */}
+      {/* Отраслевая программа: КСО и устойчивое развитие ЦОД */}
       <motion.div
         variants={reveal}
         initial="hidden"
