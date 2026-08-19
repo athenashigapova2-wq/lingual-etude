@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
 
-const PORTRAIT = 'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/3e6768091_.png';
+const PORTRAIT = '/media/teacher-portrait.webp';
 
 const T = {
   ru: {

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
+/** @type {React.Context<any>} */
 const CarouselContext = React.createContext(null)
 
 function useCarousel() {
@@ -17,18 +18,20 @@ function useCarousel() {
   return context
 }
 
-const Carousel = React.forwardRef((
-  {
-    orientation = "horizontal",
-    opts,
-    setApi,
-    plugins,
-    className,
-    children,
-    ...props
-  },
-  ref
-) => {
+const Carousel = React.forwardRef(
+  /**
+   * @param {React.ComponentPropsWithoutRef<'div'> & { orientation?: 'horizontal' | 'vertical', opts?: any, setApi?: (api: any) => void, plugins?: any[] }} props
+   * @param {React.ForwardedRef<HTMLDivElement>} ref
+   */
+  function Carousel({
+      orientation = "horizontal",
+      opts,
+      setApi,
+      plugins,
+      className,
+      children,
+      ...props
+    }, ref) {
   const [carouselRef, api] = useEmblaCarousel({
     ...opts,
     axis: orientation === "horizontal" ? "x" : "y",
@@ -112,7 +115,12 @@ const Carousel = React.forwardRef((
 })
 Carousel.displayName = "Carousel"
 
-const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
+const CarouselContent = React.forwardRef(
+  /**
+   * @param {React.ComponentPropsWithoutRef<'div'>} props
+   * @param {React.ForwardedRef<HTMLDivElement>} ref
+   */
+  function CarouselContent({ className, ...props }, ref) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
@@ -130,7 +138,12 @@ const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
 })
 CarouselContent.displayName = "CarouselContent"
 
-const CarouselItem = React.forwardRef(({ className, ...props }, ref) => {
+const CarouselItem = React.forwardRef(
+  /**
+   * @param {React.ComponentPropsWithoutRef<'div'>} props
+   * @param {React.ForwardedRef<HTMLDivElement>} ref
+   */
+  function CarouselItem({ className, ...props }, ref) {
   const { orientation } = useCarousel()
 
   return (
@@ -148,7 +161,12 @@ const CarouselItem = React.forwardRef(({ className, ...props }, ref) => {
 })
 CarouselItem.displayName = "CarouselItem"
 
-const CarouselPrevious = React.forwardRef(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+const CarouselPrevious = React.forwardRef(
+  /**
+   * @param {React.ComponentPropsWithoutRef<typeof Button> & { variant?: any, size?: any }} props
+   * @param {React.ForwardedRef<HTMLButtonElement>} ref
+   */
+  function CarouselPrevious({ className, variant = "outline", size = "icon", ...props }, ref) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
@@ -169,7 +187,12 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
 })
 CarouselPrevious.displayName = "CarouselPrevious"
 
-const CarouselNext = React.forwardRef(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+const CarouselNext = React.forwardRef(
+  /**
+   * @param {React.ComponentPropsWithoutRef<typeof Button> & { variant?: any, size?: any }} props
+   * @param {React.ForwardedRef<HTMLButtonElement>} ref
+   */
+  function CarouselNext({ className, variant = "outline", size = "icon", ...props }, ref) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (

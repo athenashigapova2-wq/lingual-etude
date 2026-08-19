@@ -1,77 +1,99 @@
-# Base44 Project
+# Lingual Étude — Ami Studio
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+Сайт и личный кабинет онлайн-школы английского языка Ami Studio. Проект объединяет публичный лендинг, запись на занятия, бесплатные материалы и закрытое пространство ученика с уроками и домашними заданиями.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+Рабочий сайт: [amistudios.ru](https://amistudios.ru)
 
-## Prerequisites
+## Возможности
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
+- двуязычный лендинг на русском и английском;
+- описание форматов обучения, отзывы, FAQ и форма заявки;
+- регистрация, вход по email и Google, восстановление пароля;
+- личный кабинет с расписанием, видеоуроками и домашними заданиями;
+- административный раздел для управления учениками и материалами;
+- загрузка файлов в Supabase Storage;
+- адаптивная вёрстка и анимации интерфейса.
 
-See the [Base44 CLI docs](https://docs.base44.com/developers/references/cli/get-started/overview) if you want to run Base44 commands directly.
+## Стек
 
-## Run Locally
+- React 18 и React Router;
+- Vite 6;
+- Tailwind CSS и Radix UI;
+- Supabase: Authentication, Database и Storage;
+- TanStack Query;
+- Framer Motion;
+- GitHub Pages и GitHub Actions.
 
-Run the full local development environment from the project root:
+## Быстрый старт
 
-```bash
-base44 dev
-```
-
-`base44 dev` starts the local Base44 development backend and, when this app is configured for it, also starts the frontend dev server for you. Use the frontend URL printed by the command.
-
-For example, when the Base44 project config includes a `serveCommand`, `base44 dev` can launch the frontend too:
-
-```json5
-{
-  "site": {
-    "serveCommand": "npm run dev"
-  }
-}
-```
-
-In a Base44 project this lives in `base44/config.jsonc`.
-
-## Run Only The Frontend
-
-If you only want to work on the frontend against the hosted Base44 backend, run:
+Понадобятся Node.js 20+ и npm.
 
 ```bash
+git clone https://github.com/athenashigapova2-wq/lingual-etude.git
+cd lingual-etude
+npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-Open the local URL printed by Vite.
+Заполните `.env.local` данными своего проекта Supabase:
 
-## Use The Hosted Backend
-
-For frontend-only development, create or update `.env.local` in the project root:
-
-```bash
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=https://your-app.base44.app
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-`VITE_BASE44_APP_ID` identifies the Base44 app.
+После запуска приложение будет доступно по адресу, который выведет Vite (обычно `http://localhost:5173`).
 
-`VITE_BASE44_APP_BASE_URL` tells the Base44 Vite plugin where to send local `/api` requests. Point it at your deployed Base44 app URL when you want the local frontend to use the hosted backend.
+## Команды
 
-When you use `base44 dev`, the command injects the local Base44 values for you, so `.env.local` is mainly needed for frontend-only workflows.
+| Команда | Назначение |
+| --- | --- |
+| `npm run dev` | Запустить локальный сервер разработки |
+| `npm run build` | Собрать production-версию в `dist/` |
+| `npm run preview` | Локально открыть production-сборку |
+| `npm run lint` | Проверить код ESLint |
+| `npm run lint:fix` | Исправить доступные замечания ESLint |
+| `npm run typecheck` | Проверить типы по `jsconfig.json` |
 
-## Publish Your Changes
+## Supabase
 
-After pushing your changes to git, open the Base44 dashboard and publish the app:
+Приложение ожидает настроенный проект Supabase со следующими ресурсами:
 
-```bash
-base44 dashboard open
+- таблицы `profiles`, `leads`, `lessons` и `homeworks`;
+- публичный Storage bucket `uploads`;
+- email/password-аутентификация;
+- OAuth-провайдер Google, если нужен вход через Google.
+
+SQL-миграции пока не включены в репозиторий, поэтому структуру таблиц и Row Level Security необходимо настроить в Supabase отдельно. Не используйте service role key во фронтенде: доступ к данным должен ограничиваться политиками RLS.
+
+## Структура проекта
+
+```text
+src/
+├── api/appApi.js          # Supabase-клиент и операции приложения
+├── components/            # Общие, лендинговые и UI-компоненты
+├── lib/                   # Контексты, хуки и вспомогательный код
+├── pages/                 # Публичные страницы и авторизация
+└── pages/dashboard/       # Личный кабинет и админ-раздел
+public/
+├── media/                 # Изображения интерфейса
+├── self-study-map.pdf     # Бесплатный материал
+└── 404.html               # Поддержка SPA-маршрутов на GitHub Pages
 ```
 
-## Docs & Support
+## Деплой
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+Workflow `.github/workflows/deploy.yml` собирает проект и публикует `dist/` в GitHub Pages после push в `main`. Перед первым деплоем добавьте в настройках репозитория Actions secrets:
 
-Base44 CLI command reference: [https://docs.base44.com/developers/references/cli/commands/introduction](https://docs.base44.com/developers/references/cli/commands/introduction)
+- `VITE_SUPABASE_URL`;
+- `VITE_SUPABASE_ANON_KEY`.
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Домен задаётся файлом `public/CNAME`. Для корректной работы вложенных маршрутов используется редирект из `public/404.html`.
+
+## Работа с конфигурацией
+
+- не коммитьте `.env` и `.env.local`;
+- храните только публичный anon key Supabase во фронтенд-переменных;
+- после изменения зависимостей обновляйте `package-lock.json`;
+- перед отправкой изменений запускайте `npm run lint`, `npm run typecheck` и `npm run build`.

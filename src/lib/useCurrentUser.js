@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 
 // undefined = loading, null = not authenticated, object = user
 export function useCurrentUser() {
   const [user, setUser] = useState(undefined);
   useEffect(() => {
-    base44.auth.me().then(setUser).catch(() => setUser(null));
+    appApi.auth.me().then(setUser).catch(() => setUser(null));
   }, []);
   return user;
 }

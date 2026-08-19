@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Loader2, Film, Image as ImageIcon, X } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 import { useCurrentUser } from '@/lib/useCurrentUser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,7 +41,7 @@ export default function Admin() {
     if (!file) return;
     setUploading(key);
     try {
-      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      const { file_url } = await appApi.integrations.Core.UploadFile({ file });
       setLs((p) => ({ ...p, [key]: file_url }));
     } finally {
       setUploading(null);
@@ -50,9 +50,9 @@ export default function Admin() {
 
   const refresh = async () => {
     const [u, h, l] = await Promise.all([
-      base44.entities.User.list().catch(() => []),
-      base44.entities.Homework.list().catch(() => []),
-      base44.entities.Lesson.list().catch(() => []),
+      appApi.entities.User.list().catch(() => []),
+      appApi.entities.Homework.list().catch(() => []),
+      appApi.entities.Lesson.list().catch(() => []),
     ]);
     setStudents(u);
     setHomework(h);
@@ -81,7 +81,7 @@ export default function Admin() {
     if (!hw.title || !hw.student_email) return;
     setBusy(true);
     try {
-      await base44.entities.Homework.create({ ...hw, status: 'not_started' });
+      await appApi.entities.Homework.create({ ...hw, status: 'not_started' });
       setHw({ title: '', lesson_title: '', description: '', due_date: '', student_email: '' });
       await refresh();
     } finally {
@@ -93,7 +93,7 @@ export default function Admin() {
     if (!ls.title || !ls.student_email) return;
     setBusy(true);
     try {
-      await base44.entities.Lesson.create(ls);
+      await appApi.entities.Lesson.create(ls);
       setLs({ title: '', module: '', duration: '', description: '', poster_url: '', video_url: '', student_email: '' });
       await refresh();
     } finally {
@@ -102,7 +102,7 @@ export default function Admin() {
   };
 
   const review = async (h, feedback) => {
-    await base44.entities.Homework.update(h.id, { feedback, status: 'reviewed' });
+    await appApi.entities.Homework.update(h.id, { feedback, status: 'reviewed' });
     await refresh();
   };
 

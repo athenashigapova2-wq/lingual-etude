@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 import { PlayCircle, NotebookPen, CalendarDays } from 'lucide-react';
 
 const NEXT_SESSION = {
@@ -42,18 +42,18 @@ function ProgressRing({ value }) {
 }
 
 export default function Overview() {
-  const [stats, setStats] = useState({ total: 0, reviewed: 0, inReview: 0 });
+  const [stats, setStats] = useState({ total: 0, reviewed: 0, inReview: 0, lessons: 0 });
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
-        const u = await base44.auth.me().catch(() => null);
+        const u = await appApi.auth.me().catch(() => null);
         setUser(u);
         const [allHw, allLessons] = await Promise.all([
-          base44.entities.Homework.list().catch(() => []),
-          base44.entities.Lesson.list().catch(() => []),
+          appApi.entities.Homework.list().catch(() => []),
+          appApi.entities.Lesson.list().catch(() => []),
         ]);
         const isAdmin = u?.role === 'admin';
         const hw = !isAdmin && u ? allHw.filter((h) => h.student_email === u.email) : allHw;
