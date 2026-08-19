@@ -9,14 +9,14 @@ const CARDS = [
     label: { ru: 'Пишу музыку', en: 'I write music' },
     btn: { ru: 'Слушать', en: 'Listen' },
     href: 'https://t.me/ath_shig/539',
-    src: 'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/31f5092ef_Frame2131328151.png',
+    src: '/media/music.webp',
   },
   {
     icon: PenTool,
     label: { ru: 'Веб-дизайнер', en: 'Web designer' },
     btn: { ru: 'Портфолио', en: 'Portfolio' },
     href: 'https://www.behance.net/athena_shig',
-    src: 'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/d1699662e_behance.png',
+    src: '/media/web-design.webp',
   },
 ];
 

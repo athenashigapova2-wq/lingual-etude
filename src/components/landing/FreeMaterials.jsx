@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 import { useLang } from '@/lib/LanguageContext';
 
 const T = {
@@ -41,7 +41,7 @@ export default function FreeMaterials() {
     if (!name.trim() || !contact.trim()) return;
     setLoading(true);
     try {
-      await base44.entities.Lead.create({
+      await appApi.entities.Lead.create({
         name: name.trim(),
         contact: contact.trim(),
         source: 'free_materials',

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
-import { supabase, base44 } from '@/api/base44Client';
+import { appApi, supabase } from '@/api/appApi';
 
 const AuthContext = createContext();
 
@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const checkUserAuth = useCallback(async () => {
     setIsLoadingAuth(true);
     try {
-      const currentUser = await base44.auth.me();
+      const currentUser = await appApi.auth.me();
       setUser(currentUser);
       setIsAuthenticated(true);
     } catch {
@@ -40,11 +40,11 @@ export const AuthProvider = ({ children }) => {
   const logout = (shouldRedirect = true) => {
     setUser(null);
     setIsAuthenticated(false);
-    base44.auth.logout(shouldRedirect ? '/' : undefined);
+    appApi.auth.logout(shouldRedirect ? '/' : undefined);
   };
 
   const navigateToLogin = () => {
-    base44.auth.redirectToLogin();
+    appApi.auth.redirectToLogin();
   };
 
   return (
@@ -52,9 +52,7 @@ export const AuthProvider = ({ children }) => {
       user,
       isAuthenticated,
       isLoadingAuth,
-      // Оставлены для совместимости с компонентами, которые их ожидают —
-      // раньше это была отдельная проверка настроек самого Base44-приложения,
-      // теперь всё решается через обычную проверку сессии Supabase выше.
+      // Эти поля ожидает корневой компонент; отдельная загрузка настроек не нужна.
       isLoadingPublicSettings: false,
       authError: null,
       authChecked,

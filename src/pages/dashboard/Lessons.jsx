@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Play } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 
 const FALLBACK_POSTERS = [
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/b3a673b8a_generated_4f72e969.png',
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/76074ee03_generated_a33348e7.png',
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/c24231c2b_generated_a0c29c3a.png',
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/a8cb3a7d7_generated_908007ec.png',
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/85af4a0f9_generated_0e461ae0.png',
-  'https://media.base44.com/images/public/6a5ba48a57159dafae9910ca/be36ad800_generated_296d8d9c.png',
+  '/media/lesson-01.webp',
+  '/media/lesson-02.webp',
+  '/media/lesson-03.webp',
+  '/media/lesson-04.webp',
+  '/media/lesson-05.webp',
 ];
 
 export default function Lessons() {
@@ -18,8 +17,8 @@ export default function Lessons() {
 
   useEffect(() => {
     (async () => {
-      const u = await base44.auth.me().catch(() => null);
-      const all = await base44.entities.Lesson.list().catch(() => []);
+      const u = await appApi.auth.me().catch(() => null);
+      const all = await appApi.entities.Lesson.list().catch(() => []);
       const list = u && u.role !== 'admin' ? all.filter((l) => l.student_email === u.email) : all;
       setLessons(list);
     })();

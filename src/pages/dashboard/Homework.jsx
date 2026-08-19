@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 import { Upload, Loader2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -88,21 +88,21 @@ export default function Homework() {
   const [me, setMe] = useState(null);
 
   const load = async (u) => {
-    const all = await base44.entities.Homework.list();
+    const all = await appApi.entities.Homework.list();
     const list = u && u.role !== 'admin' ? all.filter((h) => h.student_email === u.email) : all;
     setItems(list);
   };
 
   useEffect(() => {
     (async () => {
-      const u = await base44.auth.me().catch(() => null);
+      const u = await appApi.auth.me().catch(() => null);
       setMe(u);
       await load(u);
     })();
   }, []);
 
   const submit = async (id, { answer_text, file_url }) => {
-    await base44.entities.Homework.update(id, {
+    await appApi.entities.Homework.update(id, {
       answer_text,
       file_url,
       status: 'in_review',
@@ -185,7 +185,7 @@ function TaskEditor({ task, onClose, onSubmit }) {
     if (!file) return;
     setUploading(true);
     try {
-      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      const { file_url } = await appApi.integrations.Core.UploadFile({ file });
       setFileUrl(file_url);
       setFileName(file.name);
     } finally {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, NavLink, Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, PlayCircle, NotebookPen, CalendarDays, LogOut, Globe, ShieldCheck } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { appApi } from '@/api/appApi';
 import FilmGrain from '@/components/landing/FilmGrain';
 
 const NAV = [
@@ -17,13 +17,13 @@ export default function DashboardLayout() {
   const [me, setMe] = useState(null);
 
   useEffect(() => {
-    base44.auth.me().then(setMe).catch(() => {});
+    appApi.auth.me().then(setMe).catch(() => {});
   }, []);
 
   const nav = me?.role === 'admin' ? [...NAV, { to: '/dashboard/admin', label: 'Управление', icon: ShieldCheck }] : NAV;
 
   const logout = async () => {
-    await base44.auth.logout('/');
+    await appApi.auth.logout('/');
   };
 
   return (

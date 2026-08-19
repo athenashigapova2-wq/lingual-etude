@@ -1,20 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 
-// ============================================================
-// Supabase-клиент
-// ============================================================
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// ============================================================
-// Совместимость с прежним API base44 — чтобы не переписывать
-// вызовы base44.auth.*, base44.entities.*, base44.integrations.*
-// по всему проекту. Здесь эти вызовы "переводятся" на Supabase.
-// ============================================================
-
-// ---- entities ----
 const makeEntity = (table) => ({
   async list() {
     const { data, error } = await supabase.from(table).select('*').order('created_at', { ascending: false });
@@ -41,6 +31,7 @@ const makeEntity = (table) => ({
 const entities = {
   Lesson: makeEntity('lessons'),
   Homework: makeEntity('homeworks'),
+  Lead: makeEntity('leads'),
   // User — особый случай: читаем profiles (доступно только админу по RLS)
   User: {
     async list() {
@@ -51,7 +42,6 @@ const entities = {
   },
 };
 
-// ---- auth ----
 const auth = {
   async me() {
     const { data: { user }, error } = await supabase.auth.getUser();
@@ -89,10 +79,6 @@ const auth = {
     return { access_token: data?.session?.access_token };
   },
 
-  // Supabase уже сама устанавливает сессию после verifyOtp — отдельный
-  // setToken не нужен, оставлен как no-op для совместимости вызовов.
-  setToken() {},
-
   async resendOtp(email) {
     const { error } = await supabase.auth.resend({ type: 'signup', email });
     if (error) throw error;
@@ -105,7 +91,6 @@ const auth = {
     if (error) throw error;
   },
 
-  // resetToken тут — это код (?code=...) из ссылки в письме Supabase
   async resetPassword({ resetToken, newPassword }) {
     const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(resetToken);
     if (exchangeError) throw exchangeError;
@@ -130,7 +115,6 @@ const auth = {
   },
 };
 
-// ---- integrations (загрузка файлов) ----
 const integrations = {
   Core: {
     async UploadFile({ file }) {
@@ -143,4 +127,4 @@ const integrations = {
   },
 };
 
-export const base44 = { auth, entities, integrations };
+export const appApi = { auth, entities, integrations };
