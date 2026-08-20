@@ -3,7 +3,6 @@ import HeroScroll from '@/components/landing/HeroScroll';
 import Manifesto from '@/components/landing/Manifesto';
 import LearningFormats from '@/components/landing/LearningFormats';
 import About from '@/components/landing/About';
-import MoreThanEnglish from '@/components/landing/MoreThanEnglish';
 import Reviews from '@/components/landing/Reviews';
 import FAQSection from '@/components/landing/FAQ';
 import BookingSection from '@/components/landing/BookingSection';
@@ -19,7 +18,6 @@ export default function Landing() {
         <HeroScroll />
         <Manifesto />
         <About />
-        <MoreThanEnglish />
         <LearningFormats />
         <Reviews />
         <FAQSection />

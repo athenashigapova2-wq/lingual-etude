@@ -6,8 +6,6 @@ const reveal = {
   show: { opacity: 1, filter: 'blur(0px)' },
 };
 
-const KSO_EXAMPLE_URL = 'https://docs.google.com/spreadsheets/d/18EabZ4me0ZVwcCq9dZtdMAkQD0ixIEtL/edit?usp=sharing&ouid=112620720251705614034&rtpof=true&sd=true';
-
 const FORMATS = [
   {
     title: { ru: 'Персональные занятия', en: 'Personal lessons' },
@@ -88,38 +86,6 @@ const FORMATS = [
   },
 ];
 
-const KSO = {
-  label: { ru: 'Отраслевая программа', en: 'Industry program' },
-  title: { ru: 'КСО и устойчивое развитие ЦОД', en: 'CSR & Sustainable Data Centres' },
-  text: {
-    ru: 'Программа для специалистов и компаний, работающих с центрами обработки данных: международные показатели ресурсной эффективности, корпоративная политика устойчивого развития, оптимизация вычислительной инфраструктуры и современные технологии охлаждения. Отдельный фокус — профессиональная терминология и подготовка материалов на английском языке.',
-    en: 'A program for data-centre professionals and organizations covering international resource-efficiency metrics, corporate sustainability policy, computing-infrastructure optimization, and advanced cooling technologies. Special attention is given to professional terminology and preparing materials in English.',
-  },
-  price: '5 400 ₽',
-  unit: { ru: 'за курс', en: 'per course' },
-  points: {
-    ru: [
-      'ISO/IEC 30134: показатели PUE, WUE, REF, ERF и CER',
-      'Политика КСО и устойчивого развития для операторов ЦОД',
-      'Программные модели для максимизации полезной вычислительной отдачи на единицу энергии',
-      'Жидкостное, иммерсионное и подводное охлаждение: актуальные отраслевые практики',
-      'Минимизация энергопотребления, водопотребления и углеродной интенсивности в целевой функции',
-    ],
-    en: [
-      'ISO/IEC 30134 metrics: PUE, WUE, REF, ERF, and CER',
-      'CSR and sustainability policy for data-centre operators',
-      'Software models that maximize useful computing output per unit of energy',
-      'Current liquid, immersion, and underwater cooling practices',
-      'Energy use, water use, and carbon intensity as objective-function minimization criteria',
-    ],
-  },
-  cta: { ru: 'Уточнить программу →', en: 'Clarify the program →' },
-  example: {
-    ru: 'Ознакомиться с примером задач, разбираемых в курсе',
-    en: 'View an example of tasks covered in the course',
-  },
-};
-
 export default function LearningFormats() {
   const { lang } = useLang();
 
@@ -183,48 +149,6 @@ export default function LearningFormats() {
         ))}
       </div>
 
-      {/* Отраслевая программа: КСО и устойчивое развитие ЦОД */}
-      <motion.div
-        variants={reveal}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-10%' }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-8 flex flex-col gap-8 rounded-3xl border border-foreground/10 bg-linen p-8 md:flex-row md:items-center md:justify-between md:p-12"
-      >
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-foreground/40">{KSO.label[lang]}</p>
-          <h3 className="mt-3 font-heading text-3xl font-light text-ink md:text-4xl">{KSO.title[lang]}</h3>
-          <p className="mt-5 text-base leading-[1.7] text-foreground/75">{KSO.text[lang]}</p>
-          <ul className="mt-7 space-y-3">
-            {KSO.points[lang].map((p) => (
-              <li key={p} className="flex items-start gap-3 text-sm leading-[1.5] text-foreground/85">
-                <span className="mt-0.5 shrink-0 text-base leading-none text-gold">•</span>
-                {p}
-              </li>
-            ))}
-          </ul>
-          <a
-            href={KSO_EXAMPLE_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-7 inline-block text-sm font-medium text-gold underline decoration-gold/35 underline-offset-4 transition-opacity hover:opacity-65"
-          >
-            {KSO.example[lang]}
-          </a>
-        </div>
-        <div className="flex shrink-0 flex-col items-start gap-6 md:items-end">
-          <div className="md:text-right">
-            <p className="font-heading text-4xl leading-none text-ink md:text-5xl">
-              {KSO.price.replace(' ₽', '')}<span className="ml-1 align-middle text-2xl text-foreground/65">₽</span>
-            </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-foreground/45">{KSO.unit[lang]}</p>
-          </div>
-          <a href="#booking" className="pill-btn md:min-w-[220px]">
-            {KSO.cta[lang]}
-          </a>
-        </div>
-      </motion.div>
     </section>
   );
 }
