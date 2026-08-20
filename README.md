@@ -4,6 +4,8 @@
 
 Рабочий сайт: [amistudios.ru](https://amistudios.ru)
 
+![Главная страница Ami Studio](docs/screenshots/01-manifest.webp)
+
 ## Возможности
 
 - двуязычный лендинг на русском и английском;
@@ -13,6 +15,36 @@
 - административный раздел для управления учениками и материалами;
 - загрузка файлов в Supabase Storage;
 - адаптивная вёрстка и анимации интерфейса.
+
+## Интерфейс
+
+### Манифест
+
+![Манифест Ami Studio](docs/screenshots/01-manifest.webp)
+
+### О преподавателе
+
+![Раздел о преподавателе](docs/screenshots/02-about-teacher.webp)
+
+### Форматы обучения
+
+![Карточки форматов обучения](docs/screenshots/03-learning-formats.webp)
+
+### КСО и устойчивое развитие ЦОД
+
+![Отраслевая программа по КСО и устойчивому развитию ЦОД](docs/screenshots/04-data-centre-sustainability.webp)
+
+### Отзывы
+
+![Раздел с отзывами учеников](docs/screenshots/05-reviews.webp)
+
+### Вопросы и ответы
+
+![Раздел с вопросами и ответами](docs/screenshots/06-faq.webp)
+
+### Запись на занятие
+
+![Форма записи на занятие](docs/screenshots/07-booking.webp)
 
 ## Стек
 
