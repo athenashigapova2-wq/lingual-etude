@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         <p>
           If you do not agree with this notice, please do not use our Services.
           Questions or concerns can be sent to{' '}
-          <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>.
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
         </p>
 
         <section>
@@ -116,7 +116,7 @@ export default function PrivacyPolicy() {
             You may at any time request access to, correction of, or deletion of
             your personal data, or withdraw any consent you've given, by
             contacting us at{' '}
-            <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>.
+            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
             Upon request to delete your account, we will remove your data from our
             active systems, except where we must retain some information to
             comply with legal obligations.
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
           <h2 className="font-heading text-xl text-ink">12. How to contact us</h2>
           <p className="mt-3">
             Questions about this notice can be sent to{' '}
-            <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
             or via Telegram{' '}
             <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
           </p>
@@ -165,7 +165,7 @@ export default function PrivacyPolicy() {
       <p>
         Если Вы не согласны с этой политикой, пожалуйста, не используйте
         сайт. По вопросам пишите на{' '}
-        <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>.
+        <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
       </p>
 
       <section>
@@ -265,7 +265,7 @@ export default function PrivacyPolicy() {
           Вы можете в любой момент запросить доступ к своим данным, их
           исправление, удаление или отозвать ранее данное согласие, написав
           на{' '}
-          <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>.
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
           При запросе на удаление аккаунта мы удалим Ваши данные из активных
           систем, за исключением случаев, когда их хранение необходимо для
           соблюдения требований закона.
@@ -292,7 +292,7 @@ export default function PrivacyPolicy() {
         <h2 className="font-heading text-xl text-ink">12. Как с нами связаться</h2>
         <p className="mt-3">
           По вопросам, связанным с этой политикой, пишите на{' '}
-          <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
           или в Telegram{' '}
           <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
         </p>

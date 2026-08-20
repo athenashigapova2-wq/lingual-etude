@@ -48,8 +48,8 @@ export default function LegalLayout({ title, updated, children }) {
           <p className="text-xs uppercase tracking-[0.3em] text-foreground/40">
             {lang === 'ru' ? 'Контакты' : 'Contact'}
           </p>
-          <a href="mailto:amina.shigapova.06@mail.ru" className="block hover:text-ink">
-            amina.shigapova.06@mail.ru
+          <a href="mailto:amistudios.office@mail.ru" className="block hover:text-ink">
+            amistudios.office@mail.ru
           </a>
           <a href="https://t.me/amistudios" className="block hover:text-ink">@amistudios</a>
         </div>

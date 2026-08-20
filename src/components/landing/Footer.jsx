@@ -12,6 +12,8 @@ const T = {
     partners: 'При поддержке',
     privacy: 'Политика конфиденциальности',
     cookies: 'Использование cookie',
+    personalData: 'Согласие на обработку персональных данных',
+    agreement: 'Пользовательское соглашение',
   },
   en: {
     quote: 'To speak is to be heard.',
@@ -24,6 +26,8 @@ const T = {
     partners: 'Powered by',
     privacy: 'Privacy Policy',
     cookies: 'Cookie Policy',
+    personalData: 'Consent to Personal Data Processing',
+    agreement: 'User Agreement',
   },
 };
 
@@ -40,8 +44,8 @@ export default function Footer() {
       <div className="mt-20 grid gap-10 md:grid-cols-3">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-background/40">{t.contact}</p>
-          <a href="mailto:amina.shigapova.06@mail.ru" className="mt-4 block font-heading text-2xl italic">
-            amina.shigapova.06@mail.ru
+          <a href="mailto:amistudios.office@mail.ru" className="mt-4 block font-heading text-2xl italic">
+            amistudios.office@mail.ru
           </a>
           <a href="https://t.me/ami_shig" className="mt-2 block text-background/70 hover:text-background">
             @ami_shig
@@ -83,6 +87,8 @@ export default function Footer() {
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/50">
           <a href="/privacy-policy" className="hover:text-background">{t.privacy}</a>
           <a href="/cookie-policy" className="hover:text-background">{t.cookies}</a>
+          <a href="/personal-data-consent" className="hover:text-background">{t.personalData}</a>
+          <a href="/user-agreement" className="hover:text-background">{t.agreement}</a>
         </div>
       </div>
     </footer>

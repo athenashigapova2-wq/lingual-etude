@@ -23,6 +23,9 @@ import Lessons from './pages/dashboard/Lessons';
 import Homework from './pages/dashboard/Homework';
 import Schedule from './pages/dashboard/Schedule';
 import Admin from './pages/dashboard/Admin';
+import CookieConsent from './components/CookieConsent';
+import PersonalDataConsent from './pages/PersonalDataConsent';
+import UserAgreement from './pages/UserAgreement';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -54,6 +57,8 @@ const AuthenticatedApp = () => {
       <Route path="/email-verified" element={<EmailVerified />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/cookie-policy" element={<CookiePolicy />} />
+      <Route path="/personal-data-consent" element={<PersonalDataConsent />} />
+      <Route path="/user-agreement" element={<UserAgreement />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -82,6 +87,7 @@ function App() {
           <Router>
             <ScrollToTop />
             <AuthenticatedApp />
+            <CookieConsent />
           </Router>
         </LanguageProvider>
         <Toaster />

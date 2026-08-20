@@ -6,7 +6,7 @@ export default function CookiePolicy() {
 
   if (lang === 'en') {
     return (
-      <LegalLayout title="Cookie Policy" updated="Last updated: July 26, 2026">
+      <LegalLayout title="Cookie Policy" updated="Last updated: August 20, 2026">
         <p>
           This Cookie Policy explains how Ami Studios ("we", "us", "our") uses
           cookies and similar technologies when you visit amistudios.ru.
@@ -23,11 +23,12 @@ export default function CookiePolicy() {
         <section>
           <h2 className="font-heading text-xl text-ink">Why we use cookies</h2>
           <p className="mt-3">
-            We use only strictly necessary, first-party cookies:
+            We use strictly necessary first-party cookies and local storage:
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
-            <li>an authentication cookie that keeps you signed in to your account;</li>
-            <li>a preference cookie that remembers your selected interface language (Russian/English).</li>
+            <li>authentication and session data that keeps you signed in to your account;</li>
+            <li>preference data that supports the selected interface language;</li>
+            <li>a local record of the choice made in the cookie notice.</li>
           </ul>
           <p className="mt-3">
             We do not use advertising cookies, cross-site tracking, analytics
@@ -39,10 +40,12 @@ export default function CookiePolicy() {
         <section>
           <h2 className="font-heading text-xl text-ink">How you can control cookies</h2>
           <p className="mt-3">
-            Since the cookies we use are strictly necessary, there is no cookie
-            preference banner on the site. You can still block or delete cookies
-            at any time through your browser settings, though this will sign you
-            out of your account and reset your language preference.
+            On your first visit, a notice lets you agree to or decline the use of
+            cookies and similar storage. If you decline, we do not enable optional
+            cookies; strictly necessary session data may still be used when you
+            choose to sign in. Your choice is stored locally on your device. You
+            can clear the site's cookies and local storage in your browser to make
+            a new choice. Clearing site data may also sign you out.
           </p>
         </section>
 
@@ -66,7 +69,7 @@ export default function CookiePolicy() {
           <h2 className="font-heading text-xl text-ink">Contact</h2>
           <p className="mt-3">
             Questions about this policy can be sent to{' '}
-            <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
             or via Telegram{' '}
             <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
           </p>
@@ -76,7 +79,7 @@ export default function CookiePolicy() {
   }
 
   return (
-    <LegalLayout title="Использование cookie" updated="Обновлено: 26 июля 2026 г.">
+    <LegalLayout title="Использование cookie" updated="Обновлено: 20 августа 2026 г.">
       <p>
         Настоящая политика описывает, как «Ami Studios» (далее — «мы»)
         использует cookie-файлы и похожие технологии на сайте amistudios.ru.
@@ -94,12 +97,13 @@ export default function CookiePolicy() {
       <section>
         <h2 className="font-heading text-xl text-ink">Зачем мы используем cookie</h2>
         <p className="mt-3">
-          Мы используем только строго необходимые cookie собственного сайта
-          (first-party):
+          Мы используем строго необходимые cookie собственного сайта
+          (first-party) и локальное хранилище:
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>cookie авторизации — сохраняет Вашу сессию входа в аккаунт;</li>
-          <li>cookie предпочтений — запоминает выбранный язык интерфейса (русский/английский).</li>
+          <li>данные авторизации и сессии — сохраняют вход в аккаунт;</li>
+          <li>данные предпочтений — поддерживают выбранный язык интерфейса;</li>
+          <li>локальная запись о выборе, сделанном в уведомлении об использовании cookie.</li>
         </ul>
         <p className="mt-3">
           Мы не используем рекламные cookie, межсайтовое отслеживание,
@@ -112,11 +116,13 @@ export default function CookiePolicy() {
       <section>
         <h2 className="font-heading text-xl text-ink">Как управлять cookie</h2>
         <p className="mt-3">
-          Поскольку используемые нами cookie строго необходимы для работы
-          сайта, отдельного баннера с настройками cookie на сайте нет. Вы
-          всегда можете заблокировать или удалить cookie через настройки
-          браузера — это приведёт к выходу из аккаунта и сбросу выбранного
-          языка.
+          При первом посещении уведомление позволяет согласиться или отказаться
+          от использования cookie и похожих способов хранения данных. При
+          отказе необязательные cookie не включаются; строго необходимые данные
+          сессии могут использоваться, когда Вы самостоятельно входите в
+          аккаунт. Выбор сохраняется локально на устройстве. Чтобы сделать новый
+          выбор, удалите cookie и локальные данные сайта в настройках браузера.
+          Это также может привести к выходу из аккаунта.
         </p>
       </section>
 
@@ -140,7 +146,7 @@ export default function CookiePolicy() {
         <h2 className="font-heading text-xl text-ink">Контакты</h2>
         <p className="mt-3">
           По вопросам, связанным с этой политикой, пишите на{' '}
-          <a href="mailto:amina.shigapova.06@mail.ru" className="underline">amina.shigapova.06@mail.ru</a>{' '}
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
           или в Telegram{' '}
           <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
         </p>
