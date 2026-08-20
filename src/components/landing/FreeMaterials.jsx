@@ -11,9 +11,9 @@ const T = {
     h2: 'Карта самостоятельной работы по английскому',
     p: 'Собранный PDF: структура еженедельной практики, список ресурсов для чтения и аудирования, разбор частых ошибок на уровне B2–C1 и шаблон для ведения словаря. Оставьте контакт — пришлю ссылку на скачивание.',
     nameLabel: 'Имя',
-    contactLabel: 'Email или Telegram',
+    contactLabel: 'Email',
     namePh: 'Как Вас зовут',
-    contactPh: '@username или you@mail.com',
+    contactPh: 'you@mail.com',
     btn: 'Получить бесплатно',
   },
   en: {
@@ -21,9 +21,9 @@ const T = {
     h2: 'A self-study map for English',
     p: 'A collected PDF: a weekly practice structure, a reading and listening resource list, a breakdown of common B2–C1 mistakes, and a vocabulary journal template. Leave your contact — I’ll send the download link.',
     nameLabel: 'Name',
-    contactLabel: 'Email or Telegram',
+    contactLabel: 'Email',
     namePh: 'What’s your name',
-    contactPh: '@username or you@mail.com',
+    contactPh: 'you@mail.com',
     btn: 'Get it free',
   },
 };
@@ -84,6 +84,8 @@ export default function FreeMaterials() {
             <div>
               <label className="text-xs uppercase tracking-[0.2em] text-foreground/40">{t.contactLabel}</label>
               <input
+                type="email"
+                autoComplete="email"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
                 placeholder={t.contactPh}

@@ -69,9 +69,7 @@ export default function CookiePolicy() {
           <h2 className="font-heading text-xl text-ink">Contact</h2>
           <p className="mt-3">
             Questions about this policy can be sent to{' '}
-            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
-            or via Telegram{' '}
-            <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
+            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
           </p>
         </section>
       </LegalLayout>
@@ -79,16 +77,16 @@ export default function CookiePolicy() {
   }
 
   return (
-    <LegalLayout title="Использование cookie" updated="Обновлено: 20 августа 2026 г.">
+    <LegalLayout title="Использование cookie" updated="Обновлено: 20 августа 2026 года">
       <p>
-        Настоящая политика описывает, как «Ami Studios» (далее — «мы»)
+        Настоящая политика описывает, как «Ami Studios» (далее - «мы»)
         использует cookie-файлы и похожие технологии на сайте amistudios.ru.
       </p>
 
       <section>
         <h2 className="font-heading text-xl text-ink">Что такое cookie</h2>
         <p className="mt-3">
-          Cookie — небольшие файлы, которые сохраняются на Вашем устройстве при
+          Cookie - небольшие файлы, которые сохраняются на Вашем устройстве при
           посещении сайта, чтобы сайт работал корректно и запоминал Ваши
           настройки.
         </p>
@@ -101,8 +99,8 @@ export default function CookiePolicy() {
           (first-party) и локальное хранилище:
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>данные авторизации и сессии — сохраняют вход в аккаунт;</li>
-          <li>данные предпочтений — поддерживают выбранный язык интерфейса;</li>
+          <li>данные авторизации и сессии - сохраняют вход в аккаунт;</li>
+          <li>данные предпочтений - поддерживают выбранный язык интерфейса;</li>
           <li>локальная запись о выборе, сделанном в уведомлении об использовании cookie.</li>
         </ul>
         <p className="mt-3">
@@ -146,9 +144,7 @@ export default function CookiePolicy() {
         <h2 className="font-heading text-xl text-ink">Контакты</h2>
         <p className="mt-3">
           По вопросам, связанным с этой политикой, пишите на{' '}
-          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
-          или в Telegram{' '}
-          <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
         </p>
       </section>
     </LegalLayout>

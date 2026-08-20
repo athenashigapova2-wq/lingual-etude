@@ -4,7 +4,6 @@ const T = {
   ru: {
     quote: 'Говорить — значит быть услышанным.',
     contact: 'Связь',
-    social: 'Соцсети',
     nav: 'Навигация',
     formats: 'Форматы',
     about: 'О преподавателе',
@@ -18,7 +17,6 @@ const T = {
   en: {
     quote: 'To speak is to be heard.',
     contact: 'Contact',
-    social: 'Social',
     nav: 'Navigation',
     formats: 'Formats',
     about: 'About',
@@ -36,27 +34,17 @@ export default function Footer() {
   const t = T[lang];
 
   return (
-    <footer className="bg-ink px-[8vw] py-[14vh] text-background">
+    <footer className="footer-selection bg-ink px-[8vw] py-[14vh] text-background">
       <p className="font-heading text-4xl font-light italic leading-tight text-background/90 md:text-7xl text-balance">
         {t.quote}
       </p>
 
-      <div className="mt-20 grid gap-10 md:grid-cols-3">
+      <div className="mt-20 grid gap-12 border-t border-background/15 pt-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-20">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-background/40">{t.contact}</p>
-          <a href="mailto:amistudios.office@mail.ru" className="mt-4 block font-heading text-2xl italic">
+          <a href="mailto:amistudios.office@mail.ru" className="mt-4 block break-all font-heading text-xl italic transition-opacity hover:opacity-70 sm:text-2xl">
             amistudios.office@mail.ru
           </a>
-          <a href="https://t.me/ami_shig" className="mt-2 block text-background/70 hover:text-background">
-            @ami_shig
-          </a>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-background/40">{t.social}</p>
-          <div className="mt-4 space-y-2">
-            <a href="https://t.me/ami_shig" className="block text-background/70 hover:text-background">Telegram</a>
-            <a href="https://www.youtube.com/@amina_sh" className="block text-background/70 hover:text-background">YouTube</a>
-          </div>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-background/40">{t.nav}</p>
@@ -71,7 +59,7 @@ export default function Footer() {
       <div className="mt-20 hairline w-full bg-background/20" />
 
       <p className="mt-8 text-xs uppercase tracking-[0.3em] text-background/40">{t.partners}</p>
-      <p className="select-invert mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-background/60">
+      <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-background/60">
         <a href="https://supabase.com/" target="_blank" rel="noreferrer" className="hover:text-background">Supabase</a>
         <span className="text-background/30">✦</span>
         <a href="https://turboflare.ru/" target="_blank" rel="noreferrer" className="hover:text-background">TurboFlare</a>
@@ -82,9 +70,9 @@ export default function Footer() {
       </p>
 
       <div className="mt-10 hairline w-full bg-background/20" />
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-8 grid gap-8 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-16">
         <p className="text-sm text-background/40">© 2026 ami</p>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/50">
+        <div className="grid gap-x-8 gap-y-3 text-sm text-background/50 sm:grid-cols-2 lg:justify-self-end">
           <a href="/privacy-policy" className="hover:text-background">{t.privacy}</a>
           <a href="/cookie-policy" className="hover:text-background">{t.cookies}</a>
           <a href="/personal-data-consent" className="hover:text-background">{t.personalData}</a>

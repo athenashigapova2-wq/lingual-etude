@@ -6,6 +6,8 @@ const reveal = {
   show: { opacity: 1, filter: 'blur(0px)' },
 };
 
+const KSO_EXAMPLE_URL = 'https://docs.google.com/spreadsheets/d/18EabZ4me0ZVwcCq9dZtdMAkQD0ixIEtL/edit?usp=sharing&ouid=112620720251705614034&rtpof=true&sd=true';
+
 const FORMATS = [
   {
     title: { ru: 'Персональные занятия', en: 'Personal lessons' },
@@ -112,6 +114,10 @@ const KSO = {
     ],
   },
   cta: { ru: 'Уточнить программу →', en: 'Clarify the program →' },
+  example: {
+    ru: 'Ознакомиться с примером задач, разбираемых в курсе',
+    en: 'View an example of tasks covered in the course',
+  },
 };
 
 export default function LearningFormats() {
@@ -198,6 +204,14 @@ export default function LearningFormats() {
               </li>
             ))}
           </ul>
+          <a
+            href={KSO_EXAMPLE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-7 inline-block text-sm font-medium text-gold underline decoration-gold/35 underline-offset-4 transition-opacity hover:opacity-65"
+          >
+            {KSO.example[lang]}
+          </a>
         </div>
         <div className="flex shrink-0 flex-col items-start gap-6 md:items-end">
           <div className="md:text-right">

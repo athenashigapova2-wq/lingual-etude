@@ -7,8 +7,7 @@ const CARDS = [
   {
     icon: Music,
     label: { ru: 'Пишу музыку', en: 'I write music' },
-    btn: { ru: 'Слушать', en: 'Listen' },
-    href: 'https://t.me/ath_shig/539',
+    href: null,
     src: '/media/music.webp',
   },
   {
@@ -74,7 +73,7 @@ export default function MoreThanEnglish() {
                 const Icon = c.icon;
                 return (
                   <motion.article
-                    key={c.href}
+                    key={c.label.en}
                     initial={{ opacity: 0, filter: 'blur(12px)' }}
                     whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                     viewport={{ once: true, margin: '-10%' }}
@@ -92,15 +91,17 @@ export default function MoreThanEnglish() {
                         </span>
                         <span className="font-body text-lg text-background">{c.label[lang]}</span>
                       </div>
-                      <a
-                        href={c.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex w-fit items-center gap-1.5 rounded-full bg-background px-6 py-2.5 text-sm font-medium text-ink transition-all hover:bg-background/85"
-                      >
-                        {c.btn[lang]}
-                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </a>
+                      {c.href && (
+                        <a
+                          href={c.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex w-fit items-center gap-1.5 rounded-full bg-background px-6 py-2.5 text-sm font-medium text-ink transition-all hover:bg-background/85"
+                        >
+                          {c.btn[lang]}
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </a>
+                      )}
                     </div>
                   </motion.article>
                 );

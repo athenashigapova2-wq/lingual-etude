@@ -84,7 +84,7 @@ export default function UserAgreement() {
   }
 
   return (
-    <LegalLayout title="Пользовательское соглашение" updated="Обновлено: 20 августа 2026 г.">
+    <LegalLayout title="Пользовательское соглашение" updated="Обновлено: 20 августа 2026 года">
       <p>
         Настоящее Пользовательское соглашение регулирует использование сайта
         amistudios.ru, публичных материалов Ami Studios и личного кабинета

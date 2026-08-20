@@ -6,14 +6,13 @@ export default function PrivacyPolicy() {
 
   if (lang === 'en') {
     return (
-      <LegalLayout title="Privacy Policy" updated="Last updated: July 26, 2026">
+      <LegalLayout title="Privacy Policy" updated="Last updated: August 20, 2026">
         <p>
           This Privacy Notice for Ami Studios ("we", "us", "our") describes how and
           why we process your personal information when you use our services
           ("Services"), including when you visit amistudios.ru, register an
-          account, or otherwise contact us. Booking a lesson happens outside
-          the website, via Telegram, and does not involve any data processing
-          on amistudios.ru.
+          account, or otherwise contact us. Booking a lesson takes place by
+          email and does not require a separate messaging account.
         </p>
         <p>
           If you do not agree with this notice, please do not use our Services.
@@ -52,9 +51,8 @@ export default function PrivacyPolicy() {
           <h2 className="font-heading text-xl text-ink">3. When and with whom we share your information</h2>
           <p className="mt-3">We share information only with the service providers necessary to run the Services:</p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
-            <li><strong>Supabase</strong> — stores your account data, lesson records, and homework;</li>
-            <li><strong>Resend</strong> — delivers account and notification emails on our behalf;</li>
-            <li><strong>Google</strong> — processes sign-in if you choose "Continue with Google".</li>
+            <li><strong>Supabase</strong> - stores your account data, lesson records, and homework;</li>
+            <li><strong>Google</strong> - processes sign-in if you choose "Continue with Google".</li>
           </ul>
           <p className="mt-3">
             These providers may store data outside of your country of residence.
@@ -86,7 +84,7 @@ export default function PrivacyPolicy() {
             If you register or sign in using Google, we receive basic profile
             information from Google (name, email, profile picture). We use this
             information only to create and manage your account. We do not control
-            Google's own use of your data — please review Google's privacy policy
+            Google's own use of your data - please review Google's privacy policy
             for that.
           </p>
         </section>
@@ -143,9 +141,7 @@ export default function PrivacyPolicy() {
           <h2 className="font-heading text-xl text-ink">12. How to contact us</h2>
           <p className="mt-3">
             Questions about this notice can be sent to{' '}
-            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
-            or via Telegram{' '}
-            <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
+            <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
           </p>
         </section>
       </LegalLayout>
@@ -153,14 +149,14 @@ export default function PrivacyPolicy() {
   }
 
   return (
-    <LegalLayout title="Политика конфиденциальности" updated="Обновлено: 26 июля 2026 г.">
+    <LegalLayout title="Политика конфиденциальности" updated="Обновлено: 20 августа 2026 года">
       <p>
         Настоящая политика описывает, как и почему онлайн-школа английского
-        языка «Ami Studios» (далее — «мы») обрабатывает Ваши персональные
-        данные при использовании сайта amistudios.ru — включая регистрацию
+        языка «Ami Studios» (далее - «мы») обрабатывает Ваши персональные
+        данные при использовании сайта amistudios.ru - включая регистрацию
         аккаунта или обращение к нам любым другим способом. Запись на занятие
-        происходит вне сайта, через Telegram, и не связана с обработкой данных
-        на amistudios.ru.
+        происходит по электронной почте и не требует отдельного аккаунта в
+        мессенджере.
       </p>
       <p>
         Если Вы не согласны с этой политикой, пожалуйста, не используйте
@@ -172,9 +168,9 @@ export default function PrivacyPolicy() {
         <h2 className="font-heading text-xl text-ink">1. Какие данные мы собираем</h2>
         <p className="mt-3">Мы собираем персональные данные, которые Вы добровольно предоставляете нам при регистрации и использовании личного кабинета:</p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>данные учётной записи — email и надёжно захешированный пароль;</li>
+          <li>данные учётной записи - email и надёжно захешированный пароль;</li>
           <li>домашние задания, загружаемые файлы и данные о прогрессе занятий;</li>
-          <li>при входе через Google — базовые данные профиля (имя, email, фото), которые передаёт нам Google.</li>
+          <li>при входе через Google - базовые данные профиля (имя, email, фото), которые передаёт нам Google.</li>
         </ul>
         <p className="mt-3">Мы не обрабатываем чувствительные категории данных (о здоровье, религии, этнической принадлежности и т. п.) и не собираем данные о Вас из сторонних источников, кроме тех, что передаёт Google при входе через него.</p>
       </section>
@@ -199,9 +195,8 @@ export default function PrivacyPolicy() {
         <h2 className="font-heading text-xl text-ink">3. С кем мы делимся данными</h2>
         <p className="mt-3">Данные передаются только сервисам, необходимым для работы сайта:</p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li><strong>Supabase</strong> — хранит данные учётной записи, занятий и домашних заданий;</li>
-          <li><strong>Resend</strong> — отправляет письма от нашего имени (уведомления, подтверждения);</li>
-          <li><strong>Google</strong> — обрабатывает вход, если Вы выбираете «Войти через Google».</li>
+          <li><strong>Supabase</strong> - хранит данные учётной записи, занятий и домашних заданий;</li>
+          <li><strong>Google</strong> - обрабатывает вход, если Вы выбираете «Войти через Google».</li>
         </ul>
         <p className="mt-3">
           Обращаем внимание, что серверы этих сервисов могут находиться за
@@ -214,8 +209,8 @@ export default function PrivacyPolicy() {
       <section>
         <h2 className="font-heading text-xl text-ink">4. Cookie и похожие технологии</h2>
         <p className="mt-3">
-          Мы используем минимальный набор cookie — для сохранения авторизации
-          и выбранного языка интерфейса. Подробности — в{' '}
+          Мы используем минимальный набор cookie - для сохранения авторизации
+          и выбранного языка интерфейса. Подробности - в{' '}
           <a href="/cookie-policy" className="underline">Политике использования cookie</a>.
         </p>
       </section>
@@ -235,7 +230,7 @@ export default function PrivacyPolicy() {
           При регистрации или входе через Google мы получаем от Google
           базовые данные профиля (имя, email, фото). Эти данные используются
           только для создания и ведения Вашей учётной записи. Мы не
-          контролируем, как Google использует Ваши данные самостоятельно —
+          контролируем, как Google использует Ваши данные самостоятельно -
           ознакомьтесь с политикой конфиденциальности Google отдельно.
         </p>
       </section>
@@ -292,9 +287,7 @@ export default function PrivacyPolicy() {
         <h2 className="font-heading text-xl text-ink">12. Как с нами связаться</h2>
         <p className="mt-3">
           По вопросам, связанным с этой политикой, пишите на{' '}
-          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>{' '}
-          или в Telegram{' '}
-          <a href="https://t.me/amistudios" className="underline">@amistudios</a>.
+          <a href="mailto:amistudios.office@mail.ru" className="underline">amistudios.office@mail.ru</a>.
         </p>
       </section>
     </LegalLayout>

@@ -49,9 +49,9 @@ export default function PersonalDataConsent() {
         <section>
           <h2 className="font-heading text-xl text-ink">4. Service providers</h2>
           <p className="mt-3">
-            Data may be processed using Supabase, Resend, and Google services to
-            the extent necessary for authentication, storage, email delivery,
-            and optional Google sign-in. Further details are set out in the{' '}
+            Data may be processed using Supabase and Google services to the
+            extent necessary for authentication, storage, and optional Google
+            sign-in. Further details are set out in the{' '}
             <a href="/privacy-policy" className="underline">Privacy Policy</a>.
           </p>
         </section>
@@ -72,12 +72,12 @@ export default function PersonalDataConsent() {
   }
 
   return (
-    <LegalLayout title="Согласие на обработку персональных данных" updated="Обновлено: 20 августа 2026 г.">
+    <LegalLayout title="Согласие на обработку персональных данных" updated="Обновлено: 20 августа 2026 года">
       <p>
         Отправляя форму, создавая учётную запись или иным образом добровольно
         предоставляя сведения на сайте amistudios.ru, я свободно, своей волей и
         в своём интересе даю конкретное, предметное, информированное,
-        сознательное и однозначное согласие Ami Studios (далее — «Оператор») на
+        сознательное и однозначное согласие Ami Studios (далее - «Оператор») на
         обработку моих персональных данных.
       </p>
 
@@ -116,9 +116,9 @@ export default function PersonalDataConsent() {
       <section>
         <h2 className="font-heading text-xl text-ink">4. Привлечённые сервисы</h2>
         <p className="mt-3">
-          Для авторизации, хранения данных, доставки писем и выбранного
-          пользователем входа через Google могут использоваться сервисы
-          Supabase, Resend и Google. Подробная информация приведена в{' '}
+          Для авторизации, хранения данных и выбранного пользователем входа
+          через Google могут использоваться сервисы Supabase и Google.
+          Подробная информация приведена в{' '}
           <a href="/privacy-policy" className="underline">Политике конфиденциальности</a>.
         </p>
       </section>

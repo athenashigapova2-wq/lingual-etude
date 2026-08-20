@@ -52,7 +52,7 @@
     background: hsl(222 48% 21% / 0.22);
     color: hsl(0 0% 7%);
   }
-  .select-invert ::selection {
+  .footer-selection ::selection {
     background: hsl(40 33% 97%);
     color: hsl(0 0% 7%);
   }

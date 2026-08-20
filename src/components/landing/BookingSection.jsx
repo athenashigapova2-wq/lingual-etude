@@ -1,22 +1,22 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Send } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
 
-const TELEGRAM_URL = 'https://t.me/ami_shig';
+const CONTACT_EMAIL = 'amistudios.office@mail.ru';
 
 const T = {
   ru: {
     label: 'Запись на занятие',
     h2: 'Давайте двигаться вместе.',
     p: 'Расскажите пару слов о себе и о том, что для Вас важно в английском — отвечаю лично, без автоматических писем и шаблонов.',
-    cta: 'Написать в Telegram',
+    cta: 'Написать на почту',
   },
   en: {
     label: 'Book a session',
     h2: 'Let’s move forward together.',
     p: 'Tell me a bit about yourself and what matters to you in English — I reply personally, no automated emails or templates.',
-    cta: 'Message on Telegram',
+    cta: 'Send an email',
   },
 };
 
@@ -85,12 +85,10 @@ export default function BookingSection() {
         </h2>
         <p className="mx-auto mt-8 max-w-md text-lg leading-[1.7] text-foreground/70">{t.p}</p>
         <a
-          href={TELEGRAM_URL}
-          target="_blank"
-          rel="noreferrer"
+          href={`mailto:${CONTACT_EMAIL}`}
           className="pill-btn mt-12 inline-flex items-center gap-2 md:min-w-[280px]"
         >
-          <Send className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
+          <Mail className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
           {t.cta}
         </a>
       </motion.div>
