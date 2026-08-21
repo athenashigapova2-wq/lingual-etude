@@ -12,7 +12,7 @@ Website: [amistudios.ru](https://amistudios.ru)
 
 Ami Studio is based on learning English and diving onto the depth of your inner world. I noticed by myself that it's far easier to handle some emotional talks in English rather than in a mother tongue as if you may be truly yourself without feeling 'extra' of your own feelings.
 
-So, learn English, develop Grammar & Vocabulary and find peace with yourself in Ami Studios.
+**So, learn English, develop Grammar & Vocabulary and find peace with yourself in Ami Studios.**
 
 ## How it was done by myself
 
