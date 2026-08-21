@@ -1,6 +1,6 @@
 # [Lingual Étude - Ami Studio](https://amistudios.ru)
 
-Full-stack web site for English teacher. It consists of **Landing page**, which has info on teacher, methods of educating, pricing, reviews and **Dashboard**, which provides an opportunity to load tasks, add lessons to Google calendar and read articles. 
+Full-stack web site for English teacher consists of **Landing page**, which has info on teacher, methods of educating, pricing, reviews and a **Dashboard**, which provides an opportunity to load tasks, add lessons to Google calendar and read articles. 
 
 Site does not have any registration forms, users text directly to the teacher. If they are fine with the conditions, user can register in dashboard using email (with verification) or Google Account.
 
