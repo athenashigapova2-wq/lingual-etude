@@ -1,4 +1,4 @@
-# Lingual Étude - Ami Studio
+# [Lingual Étude - Ami Studio](https://amistudios.ru)
 
 Full-stack web site for English teacher. It consists of **Landing page**, which has info on teacher, methods of educating, pricing, reviews and **Dashboard**, which provides an opportunity to load tasks, add lessons to Google calendar and read articles. 
 
